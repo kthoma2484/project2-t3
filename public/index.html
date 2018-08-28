@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Da-Ta Baby</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/styles.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container main-pg">
+
+        <div class="row logo">
+            <p>Logo</p>
+        </div>
+        <br>
+
+        <div class="row intro">
+            <p>Introduction summary....</p>
+        </div>
+        <br>
+
+        <div class="form-group row search-opts form-check">
+            <div class="col-sm-12 opt1">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="opt1Radios" value="option1">
+                <label class="form-check-label" for="Radios1">
+                    <h3>Option 1 - Random Names</h3>
+                </label>
+                <br>
+
+                <div class="opt1-questions hidden">
+                    <p>Instructions Opt1</p>
+
+                    <div class="input-group-prepend">
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>Now many names would you like?</option>
+                            <option value="1">First Name Only</option>
+                            <option value="2">First Name and Middle Name</option>
+                            <option value="3">First Name Only and two Middle Names</option>
+                        </select>
+                    </div>
+                    <br>
+
+                    <div class="first-letter hidden">
+                        <option selected>First letter of first name starts with?</option>
+
+                    </div>
+
+
+                    <div class="input-group-prepend">
+                        <select class="custom-select" id="inputGroupSelect02">
+                            <option selected>What gender name?</option>
+                            <option value="1">Girl Name</option>
+                            <option value="2">Boy Name</option>
+                            <option value="3">Either</option>
+                        </select>
+                    </div>
+                    <br>
+
+                    <div class="input-group-append">
+                        <button class="btn" type="button">Button</button>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+
+            <div class="col-sm-12 opt2">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="opt2Radios" value="option2">
+                <label class="form-check-label" for="Radios2">
+                    <h3>Option 2 - Inspired by Origin</h3>
+                </label>
+                <br>
+                <div class="opt2-questions hidden">
+                    <p>Instructions Opt2</p>
+                    <div class="input-group-append">
+
+                        <button class="btn" type="button">Button</button>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+
+            <div class="col-sm-12 opt3">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="opt3Radios" value="option3">
+                <label class="form-check-label" for="Radios3">
+                    <h3>Option 3 - Most Popular US Names</h3>
+                </label>
+                <br>
+                <div class="opt3-questions hidden">
+                    <p>Instructions Opt3</p>
+                    <div class="input-group-append">
+
+                        <button class="btn" type="button">Button</button>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--Kim Script Start-->
+    <script id="lettersTemplate" type="text/x-handlebars-template">
+        {{#each letter}}
+        <option class="dropdown-item" value={{letter}}>
+            {{letter}}
+        </option>
+        {{/each}}
+    </script>
+    <!--Kim Script End-->
+
+</body>
+
+</html>
