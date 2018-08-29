@@ -53,7 +53,7 @@ $(function () {
         for (let i=0; i< this.value; i++) {
             console.log(i);
           
-            renderLetters(letters, text);
+            renderLetters(letters);
         }
        
 
