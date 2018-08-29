@@ -2,3 +2,4 @@ models/index.js
 node_modules
 seeds.sql
 schema.sql
+config.json
