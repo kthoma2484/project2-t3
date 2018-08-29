@@ -1,5 +1,12 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+DROP DATABASE IF EXISTS namesdb;
+CREATE DATABASE namesdb;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+CREATE TABLE names
+(
+    id int NOT NULL AUTO_INCREMENT,
+    name varchar(255) NOT NULL,
+    year INT,
+    gender VARCHAR(1),
+    count int,
+    PRIMARY KEY (id)
+)
