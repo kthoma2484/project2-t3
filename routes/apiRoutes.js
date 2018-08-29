@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  //GET ALL
+  //GET ALL yay
   app.get("/api/all", function(req, res) {  
     db.Names.findAll({}).then(function(dbName) {
       res.json(dbName);
