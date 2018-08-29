@@ -1,38 +1,38 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
+let $newNameInput = $("#new-NameInput");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveNames: function(example) {
+  saveNames: function(names) {
     return $.ajax({
       names: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "api/names",
       data: JSON.stringify(example)
     });
   },
-  getExamples: function() {
+  getNames: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/names",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deleteNames: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/names/" + id,
       type: "DELETE"
     });
   }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
+var refreshNames = function() {
+  API.getNames().then(function(data) {
     var $examples = data.map(function(example) {
       var $a = $("<a>")
         .text(example.text)
