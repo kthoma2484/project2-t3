@@ -111,7 +111,7 @@
     <!--Kim Script Start-->
     <script id="lettersTemplate" type="text/x-handlebars-template">
         <select id="name1"> 
-            <option selected>First letter of first name starts with?</option>
+            <option selected>{{index}}</option>
             {{#each this}}
             <option class="dropdown-item" value={{this}}>
                 {{this}}
