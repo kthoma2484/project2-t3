@@ -30,7 +30,7 @@ var API = {
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
+// refreshExamples gets new examples from the db and repopulates the lists
 var refreshExamples = function() {
   API.getExamples().then(function(data) {
     var $examples = data.map(function(example) {
