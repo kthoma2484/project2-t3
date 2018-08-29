@@ -1,14 +1,8 @@
 module.exports = {
   "development": {
-<<<<<<< HEAD:config/config.json
-    "username": "root",
-    "password": "sqlpassword",
-    "database": "namesdb",
-=======
-    "username": "process.env.DEV_DB_USER",
-    "password": "process.env.DEV_DB_PASSWORD",
+    "username": process.env.DEV_DB_USER,
+    "password": process.env.DEV_DB_PASSWORD,
     "database": "testdb",
->>>>>>> 45370f02e204805049d5a254bb5326c24147f812:config/config.js
     "host": "localhost",
     "dialect": "mysql"
   },
