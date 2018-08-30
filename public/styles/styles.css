@@ -1,3 +1,18 @@
-.list-group-item {
-  line-height: 2.5;
+.col-sm-12 {
+}
+
+.row {
+  display: flex;
+  flex: 1;
+}
+
+.logo {
+  font-size: 60px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.hidden {
+  display: none;
 }
