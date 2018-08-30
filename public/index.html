@@ -51,7 +51,7 @@
                     <div class="first-letter hidden" id="starts-with">
 
                     </div>
-
+                    <br>
 
                     <div class="input-group-prepend">
                         <select class="custom-select" id="inputGroupSelect02">
@@ -111,7 +111,7 @@
     <!--Kim Script Start-->
     <script id="lettersTemplate" type="text/x-handlebars-template">
         <select id="name1"> 
-            <option selected>First letter of first name starts with?</option>
+            <option selected>{{index}}</option>
             {{#each this}}
             <option class="dropdown-item" value={{this}}>
                 {{this}}
@@ -129,7 +129,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <script src="./js/handlebars-v4.0.11.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/main.js"></script>
 
 </body>
 
