@@ -7,11 +7,7 @@ var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-<<<<<<< HEAD
   saveNames: function(names) {
-=======
-  saveExample: function (example) {
->>>>>>> master
     return $.ajax({
       names: {
         "Content-Type": "application/json"
@@ -21,21 +17,13 @@ var API = {
       data: JSON.stringify(example)
     });
   },
-<<<<<<< HEAD
-  getNames: function() {
-=======
   getExamples: function () {
->>>>>>> master
     return $.ajax({
       url: "api/names",
       type: "GET"
     });
   },
-<<<<<<< HEAD
-  deleteNames: function(id) {
-=======
   deleteExample: function (id) {
->>>>>>> master
     return $.ajax({
       url: "api/names/" + id,
       type: "DELETE"
