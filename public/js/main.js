@@ -43,11 +43,22 @@ $(function () {
         $("#starts-with").append(myGeneratedHTML);
     }
 
+    function renderLettersTwo(letters) {
+        //console.log("data passed")
+        let lettersData = document.getElementById("originTemplate").innerHTML;
+        //console.log(projectData)
+        let compiledProject = Handlebars.compile(lettersData);
+        //console.log(compiledProject(myProjects));
+        let myGeneratedHTML = compiledProject(letters);
+        console.log(typeof myGeneratedHTML);
+        $("#origin-starts-with").append(myGeneratedHTML);
+    }
+
     // If Random Name search is selected...
     $("#inputGroupSelect01").change(function () {
         
         // Shows search options for random name search
-        console.log("selector 1 was selected");
+        console.log("option 1 selector 1 was selected");
         $("#starts-with").removeClass("hidden");
         $("#starts-with").html("");
 
@@ -69,5 +80,34 @@ $(function () {
             renderLetters(letters);
         }
     });
+
+ // If Random Name search is selected...
+ $("#inputGroupSelect04").change(function () {
+        
+    // Shows search options for random name search
+    console.log("option 2 selector 1 was selected");
+    $("#origin-starts-with").removeClass("hidden");
+    $("#origin-starts-with").html("");
+
+    // Appends appropriate text for first letter search
+    if ($(this).val() === "1") {
+        console.log("first letter text added");
+        $(".origin-first-letter").append("<p> Enter the letter you wish the first name to begin with: <p>");
+    } else if ($(this).val() === "2") {
+        console.log("first letter text added");
+        $(".origin-first-letter").append("<p> Enter the letters you wish the first name and the middle name to begin with: <p>");
+    } else if ($(this).val() === "3") {
+        console.log("first letter text added");
+        $(".origin-first-letter").append("<p> Enter the letters you wish the first name, the middle name, and the second middle name to begin with: <p>");
+    }
+
+    // Loops through values of number of names wanted and renders alphabet dropdowns for each
+    for (let i = 0; i < this.value; i++) {
+        console.log(i);
+        renderLettersTwo(letters);
+    }
+});
+
+
 });
 //-----------------------------------------------------------------
