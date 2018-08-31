@@ -30,11 +30,10 @@ $(function () {
         $(".opt3").unbind();
     });
 
+    // Use function using handlebars to populate alphabet in dropdown menu
     console.log(letters);
-
     function renderLetters(letters) {
         //console.log("data passed")
-
         let lettersData = document.getElementById("lettersTemplate").innerHTML;
         //console.log(projectData)
         let compiledProject = Handlebars.compile(lettersData);
@@ -44,22 +43,31 @@ $(function () {
         $("#starts-with").append(myGeneratedHTML);
     }
 
+    // If Random Name search is selected...
     $("#inputGroupSelect01").change(function () {
-    
-            console.log("selector 1 was selected");
-            $("#starts-with").removeClass("hidden");
-            $("#starts-with").html("");
+        
+        // Shows search options for random name search
+        console.log("selector 1 was selected");
+        $("#starts-with").removeClass("hidden");
+        $("#starts-with").html("");
 
-        for (let i=0; i< this.value; i++) {
+        // Appends appropriate text for first letter search
+        if ($(this).val() === "1") {
+            console.log("first letter text added");
+            $(".first-letter").append("<p> Enter the letter you wish the first name to begin with: <p>");
+        } else if ($(this).val() === "2") {
+            console.log("first letter text added");
+            $(".first-letter").append("<p> Enter the letters you wish the first name and the middle name to begin with: <p>");
+        } else if ($(this).val() === "3") {
+            console.log("first letter text added");
+            $(".first-letter").append("<p> Enter the letters you wish the first name, the middle name, and the second middle name to begin with: <p>");
+        }
+
+        // Loops through values of number of names wanted and renders alphabet dropdowns for each
+        for (let i = 0; i < this.value; i++) {
             console.log(i);
-          
             renderLetters(letters);
         }
-       
-
     });
-
-
-
 });
 //-----------------------------------------------------------------
