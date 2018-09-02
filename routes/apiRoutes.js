@@ -1,6 +1,5 @@
 var db = require("../models");
-
-module.exports = function(app) {
+module.exports = function (app) {
   //GET ALL yay
   app.get("/api/all", function(req, res) {  
     db.Names.findAll({}).then(function(dbName) {
@@ -9,26 +8,26 @@ module.exports = function(app) {
     });
   });
   //FILTER BY GENDER
-  app.get("/api/all/:gender", function(req, res) {  
+  app.get("/api/all/:gender", function (req, res) {
     db.Names.findAll({
       where: {gender: req.params.gender.toUpperCase()}
     }).then(function(dbName) {
       res.render("results", {dbName});
     });
   });
-
   //FILTER BY FIRST LETTER
-  app.get("/api/firstLetter/:letter", function(req, res) {
+  app.get("/api/firstLetter/:letter", function (req, res) {
     db.Names.findAll({
-      where : {
+      where: {
         name: {
           $like:  req.params.letter + "%"}}
     }).then(function(dbName) {
       res.render("results", {dbName});
+
     });
   });
   //SORT BY POPULARITY
-  app.get("/api/sortCount", function(req, res) {
+  app.get("/api/sortCount", function (req, res) {
     db.Names.findAll({
       order: [["count", "DESC"]]
     }).then(function(dbName) {
@@ -36,26 +35,24 @@ module.exports = function(app) {
     });
   });
   //FILTER BY GENDER AND SORT BY POPULARITY
-  app.get("/api/sortCount/:gender", function(req, res) {
+  app.get("/api/sortCount/:gender", function (req, res) {
     db.Names.findAll({
-      where: {gender: req.params.gender.toUpperCase()},
+      where: { gender: req.params.gender.toUpperCase() },
       order: [["count", "DESC"]]
     }).then(function(dbName) {
       res.render("results", {dbName});
-    });
-  });
-  //FILTER BY YEAR AND SORT BY POPULARITY
-  app.get("/api/year/:year", function(req, res) {
-    db.Names.findAll({
-      where: {year: req.params.year},
-      order: [["count", "DESC"]]
-    }).then(function(dbName) {
-      res.render("results", {dbName});
-    });
   });
   
+  //FILTER BY YEAR AND SORT BY POPULARITY
+  app.get("/api/year/:year", function (req, res) {
+    db.Names.findAll({
+      where: { year: req.params.year },
+      order: [["count", "DESC"]]
+    }).then(function(dbName) {
+      res.render("results", {dbName});
+    });
+  });
   //gender, popularity, year
-
   // Create a new example
   // app.post("/api/examples", function(req, res) {
   //   db.Example.create(req.body).then(function(dbExample) {
@@ -69,4 +66,3 @@ module.exports = function(app) {
   //     res.json(dbExample);
   //   });
   // });
-};
