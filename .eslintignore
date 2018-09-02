@@ -3,3 +3,6 @@ node_modules
 seeds.sql
 schema.sql
 config.json
+particles-img.min.js
+particles.json
+particles.js
