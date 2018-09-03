@@ -2,7 +2,6 @@
 
 $(function () {
 
-
     var letters = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ").split("");
     //let data = {letter: [letters]};
 
