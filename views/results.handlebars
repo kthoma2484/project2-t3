@@ -1,0 +1,40 @@
+
+  <div class="names-tables">
+  <h1>GRID TESTING</h1>
+  {{!-- Headers --}}
+  <div class="row">
+    <div class="col-3">
+      Name
+    </div>
+    <div class="col-1">
+      Gender
+    </div>
+    <div class="col-1">
+      Year Used
+    </div>
+    <div class="col-2">
+      Popularity
+    </div>
+{{!-- Content --}}
+  </div>
+  {{#each dbName}}
+  <div class="row">
+    <div class="col-3">
+      {{this.name}}
+    </div>
+    <div class="col-1">
+      {{this.gender}}
+    </div>
+    <div class="col-1">
+      {{this.year}}
+    </div>
+    <div class="col-2">
+      {{this.count}}
+    </div>
+
+  </div>
+</div>
+{{/each}}
+</div>
+<button class="return-home" onclick="window.location.href='/public/index.html'">Make another search</button>
+
