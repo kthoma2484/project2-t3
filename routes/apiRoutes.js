@@ -4,7 +4,6 @@ module.exports = function(app) {
   //GET ALL yay
   app.get("/api/all", function(req, res) {  
     db.Names.findAll({}).then(function(dbName) {
-      console.log(dbName);
       res.render("results", {dbName});
     });
   });
@@ -14,6 +13,27 @@ module.exports = function(app) {
       where: {gender: req.params.gender.toUpperCase()}
     }).then(function(dbName) {
       res.render("results", {dbName});
+    });
+  });
+
+  app.get("/api/wild/:letter/:gender", function(req, res) {  
+    db.Names.findAll({
+      where : {
+        name: {
+          $like:  req.params.letter + "%"},
+        gender: req.params.gender}
+    }).then(function(dbName) {
+      res.send(dbName);
+    });
+  });
+
+  app.get("/api/wild/:letter/", function(req, res) {  
+    db.Names.findAll({
+      where : {
+        name: {
+          $like:  req.params.letter + "%"}}
+    }).then(function(dbName) {
+      res.send(dbName);
     });
   });
 

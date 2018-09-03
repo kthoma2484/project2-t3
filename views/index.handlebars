@@ -1,33 +1,106 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+<div class="container main-pg">
+
+  <div class="row logo">
+    <p>Logo</p>
+  </div>
+  <br>
+
+  <div class="row intro">
+    <p>Introduction summary....</p>
+  </div>
+  <br>
+
+  <div class="form-group row search-opts form-check">
+    <div class="col-sm-12 opt1">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="opt1Radios" value="option1">
+      <label class="form-check-label" for="Radios1">
+        <h3>Option 1 - Random Names</h3>
+      </label>
+      <br>
+
+      <div class="opt1-questions hidden">
+        <p>Instructions Opt1</p>
+
+        <div class="input-group-prepend">
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Now many names would you like?</option>
+            <option id="inputGrpSel1" value="1">First Name Only</option>
+            <option id="inputGrpSel2" value="2">First Name and Middle Name</option>
+            <option id="inputGrpSel3" value="3">First Name Only and two Middle Names</option>
+          </select>
+        </div>
+        <br>
+
+        <div class="first-letter hidden" id="starts-with">
+
+        </div>
+        <br>
+
+        <div class="input-group-prepend">
+          <select class="custom-select" id="inputGroupSelect02">
+            <option selected>Which gender?</option>
+            <option value="1">Girl</option>
+            <option value="2">Boy</option>
+            <option value="3">Either</option>
+          </select>
+        </div>
+        <br>
+
+        <div class="input-group-append">
+          <button class="btn opt1-search" type="button">Generate Name</button>
+        </div>
+        <br>
+      </div>
+    </div>
+    <br>
+
+    <div class="col-sm-12 opt2">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="opt2Radios" value="option2">
+      <label class="form-check-label" for="Radios2">
+        <h3>Option 2 - Inspired by Origin</h3>
+      </label>
+      <br>
+      <div class="opt2-questions hidden">
+        <p>Instructions Opt2</p>
+        <div class="input-group-append">
+
+          <button class="btn" type="button">Button</button>
+        </div>
+        <br>
+      </div>
+    </div>
+    <br>
+
+    <div class="col-sm-12 opt3">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="opt3Radios" value="option3">
+      <label class="form-check-label" for="Radios3">
+        <h3>Option 3 - Most Popular US Names</h3>
+      </label>
+      <br>
+      <div class="opt3-questions hidden">
+        <p>Instructions Opt3</p>
+        <div class="input-group-append">
+
+          <button class="btn" type="button">Button</button>
+        </div>
+        <br>
       </div>
     </div>
   </div>
+
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+
+<!--Kim Script Start-->
+<script id="lettersTemplate" type="text/x-handlebars-template">
+        <select id="name1"> 
+            <option selected>First letter of first name starts with?</option>
+            {{#each this}}
+            <option class="dropdown-item" value={{this}}>
+                {{this}}
+            </option>
+            {{/each}}
+        </select>  
+    </script>
+<!--Kim Script End-->
+

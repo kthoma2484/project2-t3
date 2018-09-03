@@ -1,3 +1,4 @@
+
 //-----------------------Kim's Code--------------------------------
 $(function () {
 
@@ -57,11 +58,49 @@ $(function () {
       }
       
     });
-  
+
+    //Craig utilities
+    $('#starts-with').on('change', function(){
+      console.log("Name1 Value:", $('#name1').val())
+    })
+    
+    $('#opt1-search').on('click', function(){
+      let numNames = $('#inputGroupSelect01').val();
+      console.log("numNames: ", numNames);
+      let firstLetter = $('#name1').val();
+      console.log("firstLetterVal:", firstLetter);
+      let gender = $('#inputGroupSelect02').val();
+      console.log("GenderVal:", gender); 
+      let lastName = $('#last-name').val();
+      console.log("lastName:", lastName);
+    
+      // Do an api request depending on conditions above
+      if(gender == 1){ //girl
+        $.get(`/api/wild/${firstLetter}/f`).then(function(data){
+          console.log(data);
+          alert("Data: " + data + "\nStatus: " + status);
+        });
+      } else if(gender == 2){ //boy
+        $.get(`/api/wild/${firstLetter}/m`).then(function(data){
+          console.log(data);
+          alert("Data: " + data + "\nStatus: " + status);
+        });
+      } else { //all
+        $.get(`/api/wild/${firstLetter}/`).then(function(data){
+          console.log(data);
+          alert("Data: " + data + "\nStatus: " + status);
+      });
+      }
+      
+     
+
+    function renderModal(data){
+
+    }
   
   
   });
   //-----------------------------------------------------------------
   
   
-  
+});
