@@ -1,18 +1,95 @@
-.col-sm-12 {
+body {
+  display: flex;
+  background-image: url("../img/animatedclouds.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  max-height: 500px;
+  text-align: center;  
+}
+
+/*---Pop-up style starts--------------*/
+
+
+/*---Pop-up style ends------------------------------*/
+
+
+
+.container {
+  text-align: center;
+
+}
+
+.main-pg {
+  background-color: rgba(142, 151, 12, 0.6);
+  overflow: auto;
 }
 
 .row {
   display: flex;
   flex: 1;
+  max-width: 700px;
+  font-family:'Architects Daughter', 'Handlee', 'Indie Flower',  'Kalam','cursive', sans-serif;
+  font-size: 40px;
+  font-weight: 24px;
+  padding: 0 20px;
 }
 
-.logo {
-  font-size: 60px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
-  justify-content: center;
-  margin: 20px 0;
+.col-sm-12 {
+  display: flex;
+  font-family:'Handlee', 'Indie Flower',  'Kalam','Architects Daughter', 'cursive', sans-serif;
+  font-size: 30px;
+  font-weight: 16px;
 }
+
+#logo {
+  display: flex;
+  background-image: url("../img/datababylogo1.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  max-width: 800px;
+  height: 150px;
+  justify-content: center;
+  margin: 10px 0;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: 3;
+
+}
+
+
+#name1,
+#origin-name1 {
+  display: flex;
+  max-width: 175px;
+}
+
 
 .hidden {
   display: none;
+}
+
+
+/*----------------------------------resizing--------------------------------------------*/
+
+/* for screens 1024 or less */
+@media (max-width: 1024px) {
+  
+  body {
+  background-size: cover;
+  }
+
+
+
+}
+
+
+/* for screens 780 or less */
+@media (max-width: 780px) {
+
+}
+
+
+/* for screens 540 or less */
+@media (max-width: 540) {
+
 }
