@@ -14,7 +14,6 @@ module.exports = function (app) {
       res.render("results", {dbName});
     });
   });
-<<<<<<< HEAD
 
   app.get("/api/wild/:letter/:gender", function(req, res) {  
     db.Names.findAll({
@@ -37,8 +36,6 @@ module.exports = function (app) {
     });
   });
 
-=======
->>>>>>> b220f6a108744e2dc1f294d415d9b747c4ec0c34
   //FILTER BY FIRST LETTER
   app.get("/api/firstLetter/:letter", function (req, res) {
     db.Names.findAll({
@@ -90,3 +87,5 @@ module.exports = function (app) {
   //     res.json(dbExample);
   //   });
   // });
+  });
+};
