@@ -9,26 +9,32 @@ $(function () {
     // If option 1 search then show option 1 items and remove options 2 and 3
     $(".opt1").on("click", function () {
         console.log("this selected");
+        $(".intro").addClass("hidden");
         $(".opt1-questions").removeClass("hidden");
         $(".opt2").addClass("hidden");
         $(".opt3").addClass("hidden");
+        $(".initial-opts").addClass("hidden");
         $(".opt1").unbind();
     });
 
 
     $(".opt2").on("click", function () {
         console.log("this selected");
+        $(".intro").addClass("hidden");
         $(".opt2-questions").removeClass("hidden");
         $(".opt1").addClass("hidden");
         $(".opt3").addClass("hidden");
+        $(".initial-opts").addClass("hidden");
         $(".opt2").unbind();
     });
 
     $(".opt3").on("click", function () {
         console.log("this selected");
+        $(".intro").addClass("hidden");
         $(".opt3-questions").removeClass("hidden");
         $(".opt1").addClass("hidden");
         $(".opt2").addClass("hidden");
+        $(".initial-opts").addClass("hidden");
         $(".opt3").unbind();
     });
 
@@ -90,7 +96,7 @@ $(function () {
       console.log("Name1 Value:", $('#name1').val())
     })
     
-    $('#opt1-search').on('click', function(){
+    $('#opt1-btn').on('click', function(){
       let numNames = $('#inputGroupSelect01').val();
       console.log("numNames: ", numNames);
       let firstLetter = $('#name1').val();
@@ -129,29 +135,9 @@ $(function () {
   //-----------------------------------------------------------------
   
   
-});
 
- // If Random Name search is selected...
- $("#inputGroupSelect04").change(function () {
-        
-    // Shows search options for random name search
-    console.log("option 2 selector 1 was selected");
-    $("#origin-starts-with").removeClass("hidden");
-    $("#origin-starts-with").html("");
 
-    // Appends appropriate text for first letter search
-    if ($(this).val() === "1") {
-        console.log("first letter text added");
-        $(".origin-first-letter").append("<p> Enter the letter you wish the first name to begin with: <p>");
-    } else if ($(this).val() === "2") {
-        console.log("first letter text added");
-        $(".origin-first-letter").append("<p> Enter the letters you wish the first name and the middle name to begin with: <p>");
-    } else if ($(this).val() === "3") {
-        console.log("first letter text added");
-        $(".origin-first-letter").append("<p> Enter the letters you wish the first name, the middle name, and the second middle name to begin with: <p>");
-    }
-
-    // If Random Name search is selected...
+ // If Origin name search is selected...
     $("#inputGroupSelect04").change(function () {
 
         // Shows search options for random name search
