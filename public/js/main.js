@@ -68,6 +68,13 @@ $(function () {
         $("#origin-starts-with").append(myGeneratedHTML);
     }
 
+    function displayResult() {
+        console.log("displayResult function works");
+        $("form").addClass("hidden");
+        $("#result-div").removeClass("hidden");
+
+    }
+
     // If Random Name search is selected...
     $("#inputGroupSelect01").change(function () {
 
@@ -134,15 +141,43 @@ $(function () {
                 console.log('gender search for female')
 
                 $.get(`/api/wild/${firstLetter}/f`).then(function (data) {
-                    console.log(data);
-                    alert("Data: " + data + "\nStatus: " + status);
+                    //console.log(data[0].name);
+                    //alert("Data: " + data + "\nStatus: " + status);
+                    randomFirstName = data[0].name;
+                    //console.log('this randomeFirstName: ' + randomFirstName)
+
+                    fullName = randomFirstName + ' ' + lastName;
+                    //console.log('this is fullName: ' + fullName) 
+
+                    //console.log('Your random name is: ' + fullName + '!')
+                    displayResult();
+                    $("#result-div").append(`
+                    <h1> Your baby's random name is...</h1>
+                    <p id="result-deco"> 
+                        ${fullName}
+                    </p>`)
+
                 });
             } else if (gender == 2) { //boy
 
                 console.log('gender search for male')
                 $.get(`/api/wild/${firstLetter}/m`).then(function (data) {
-                    console.log(data);
-                    alert("Data: " + data + "\nStatus: " + status);
+                    //console.log(data[0].name);
+                    //alert("Data: " + data + "\nStatus: " + status);
+                    randomFirstName = data[0].name;
+                    //console.log('this randomeFirstName: ' + randomFirstName)
+
+                    fullName = randomFirstName + ' ' + lastName;
+                    //console.log('this is fullName: ' + fullName) 
+
+                    //console.log('Your random name is: ' + fullName + '!')
+                    displayResult();
+                    $("#result-div").append(`
+                    <h1> Your baby's random name is...</h1>
+                    <p id="result-deco"> 
+                        ${fullName}
+                    </p>`)
+
                 });
             } else { //all
                 console.log("gender search for either")
@@ -158,7 +193,13 @@ $(function () {
                     fullName = randomFirstName + ' ' + lastName;
                     //console.log('this is fullName: ' + fullName) 
 
-                    console.log('Your random name is: ' + fullName + '!')
+                    //console.log('Your random name is: ' + fullName + '!')
+                    displayResult();
+                    $("#result-div").append(`
+                    <h1> Your baby's random name is...</h1>
+                    <p id="result-deco"> 
+                        ${fullName}
+                    </p>`)
                 });
             }
 

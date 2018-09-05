@@ -161,6 +161,7 @@ form {
 #last-name {
   width: 300px;
 }
+
 #reset {
   position: absolute;
   right: 20px;
@@ -168,6 +169,18 @@ form {
   background-color: darkmagenta;
   font-size: 20px;
   font-weight: bolder;
+}
+
+#result-div {
+  background-color: rgb(100, 193, 209);
+  align-items: center;
+  padding: 50px 25px;
+  margin: 100px  50px;
+}
+
+#result-deco {
+  color: white;
+  font-size: 50px;
 }
 
 /*---photobubbles code starts--------------*/

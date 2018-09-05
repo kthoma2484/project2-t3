@@ -1,15 +1,21 @@
-  <div class="container">
-
-        <div class="animated tada" id="logo">
-        </div>
-        <br>
-
-        <div class="main-pg">
-
-            <div class="row intro">
-                <p>Introduction summary....</p>
+  
+            <div class="display-origin-data">
+                <p id="lastnamep"></p>
+                <p id="congratsp"></p>
             </div>
-            <br>
+            <div class="row intro">
+                <h1>Welcome to Da-Ta-Baby - the baby name finder!</h1>
+
+                <p> Just pick an option for how you would like to search for a baby name. Each option allows you to
+                    filter your search based on the type of search you select. The random name is a luck of the draw
+                    search. The search by origin will request a last name from you, search that last name, and find
+                    suggest first and/or middle names that have the same country origin. And finally, the search by
+                    common U.S. names will suggest names based on popular names recorded in U.S. records since 1880! We
+                    hope you enjoy our application selections! Get ready to find your baby's perfect name!
+                </p>
+
+                <h2 style="text-decoration: underline;">Select one of the search items to begin!</h2>
+            </div>
 
             <form>
                 <div class="form-group row search-opts form-check opt1">
@@ -173,6 +179,9 @@
             </form>
         </div>
 
+        <div class="container hidden" id="result-div"></div>
+
+
         <div class="stage">
             <figure class="ball bubble" id="pic1"><span class="shadow"></span></figure>
         </div>
@@ -191,8 +200,8 @@
         <div class="stage">
             <figure class="ball6 bubble" id="pic6"><span class="shadow"></span></figure>
         </div>
-    </div>
 
+</div>
 
     <script id="lettersTemplate" type="text/x-handlebars-template">
         <select class="form-control" id="name1"> 
