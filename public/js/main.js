@@ -93,76 +93,76 @@ $(function () {
             console.log(i);
             renderLetters(letters);
         }
-    });
 
 
-    //Craig utilities
-    $('#starts-with').on('change', function () {
-        console.log("Name1 Value:", $('#name1').val())
-    })
 
-    $('#opt1-btn').on('click', function () {
 
-        let numNames = $('#inputGroupSelect01').val();
-        console.log("numNames: ", numNames);
-        let firstLetter = $('#name1 option:selected').val();
-        console.log("firstLetterVal:", firstLetter);
-        let gender = $('#inputGroupSelect02').val();
-        console.log("GenderVal:", gender);
-        let lastName = $('#last-name').val();
-        console.log("lastName:", lastName);
-        let fullName = '';
+        //Craig utilities
+        $('#starts-with').on('change', function () {
+            console.log("Name1 Value:", $('#name1').val());
 
-        if (firstLetter == 'Please pick a letter.') {
-            alert('Please choose the letter you wish the first name to begin with.');
-            return null;
-        } else if (gender == 'What gender name?') {
-            alert('Please select a gender');
-            return null;
-        } else if (lastName == null) {
-            alert('Please enter a last name');
-            return null;
-        } else if (!lastName.match('^[a-zA-Z]{3,16}$')) {
-            alert('Last name must only contain numbers and be 3-16 characters long. Please re-enter valid last name.');
-            return null;
-        }
+        });
 
-        // Do an api request depending on conditions above
-        if (gender == 1) { //girl
-            console.log('gender search for female')
+        $('#opt1-btn').on('click', function () {
 
-            $.get(`/api/wild/${firstLetter}/f`).then(function (data) {
-                console.log(data);
-                alert("Data: " + data + "\nStatus: " + status);
-            });
-        } else if (gender == 2) { //boy
+            let numNames = $('#inputGroupSelect01').val();
+            console.log("numNames: ", numNames);
+            let firstLetter = $('#name1 option:selected').val();
+            console.log("firstLetterVal:", firstLetter);
+            let gender = $('#inputGroupSelect02').val();
+            console.log("GenderVal:", gender);
+            let lastName = $('#last-name').val();
+            console.log("lastName:", lastName);
+            let fullName = '';
 
-            console.log('gender search for male')
-            $.get(`/api/wild/${firstLetter}/m`).then(function (data) {
-                console.log(data);
-                alert("Data: " + data + "\nStatus: " + status);
-            });
-        } else { //all
-            console.log("gender search for either")
+            if (firstLetter == 'Please pick a letter.') {
+                alert('Please choose the letter you wish the first name to begin with.');
+                return null;
+            } else if (gender == 'What gender name?') {
+                alert('Please select a gender');
+                return null;
+            } else if (lastName == null) {
+                alert('Please enter a last name');
+                return null;
+            } else if (!lastName.match('^[a-zA-Z]{3,16}$')) {
+                alert('Last name must only contain numbers and be 3-16 characters long. Please re-enter valid last name.');
+                return null;
+            }
 
-            $.get(`/api/wild/${firstLetter}/`).then(function (data) {
-                //console.log(JSON.stringify(data))
+            // Do an api request depending on conditions above
+            if (gender == 1) { //girl
+                console.log('gender search for female')
 
-                //alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+                $.get(`/api/wild/${firstLetter}/f`).then(function (data) {
+                    console.log(data);
+                    alert("Data: " + data + "\nStatus: " + status);
+                });
+            } else if (gender == 2) { //boy
 
-                randomFirstName = data[0].name;
-                //console.log('this randomeFirstName: ' + randomFirstName)
+                console.log('gender search for male')
+                $.get(`/api/wild/${firstLetter}/m`).then(function (data) {
+                    console.log(data);
+                    alert("Data: " + data + "\nStatus: " + status);
+                });
+            } else { //all
+                console.log("gender search for either")
 
-                fullName = randomFirstName + ' ' + lastName;
-                //console.log('this is fullName: ' + fullName) 
+                $.get(`/api/wild/${firstLetter}/`).then(function (data) {
+                    //console.log(JSON.stringify(data))
 
-                console.log('Your random name is: ' + fullName + '!')
-            });
-        }
+                    //alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
 
-        function renderModal(data) {
+                    randomFirstName = data[0].name;
+                    //console.log('this randomeFirstName: ' + randomFirstName)
 
-        }
+                    fullName = randomFirstName + ' ' + lastName;
+                    //console.log('this is fullName: ' + fullName) 
+
+                    console.log('Your random name is: ' + fullName + '!')
+                });
+            }
+
+        });
 
 
     });
@@ -193,9 +193,11 @@ $(function () {
             console.log(i);
             renderLettersTwo(letters);
         }
+
     });
 
+    $("#reset").on('click', function refreshPage() {
+        window.location.reload();
+    });
 
-
-
-});
+})

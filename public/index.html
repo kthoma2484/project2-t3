@@ -25,7 +25,12 @@
         <br>
 
         <div class="container">
+            <!-- inserting origin data - ericka  -->
 
+            <div class="display-origin-data">
+                <p id="lastnamep"></p>
+                <p id="congratsp"></p>
+            </div>
             <div class="row intro">
                 <h1>Welcome to Da-Ta-Baby - the baby name finder!</h1>
 
@@ -126,7 +131,10 @@
                                 <ul>
                                     <li>First, type the name last for which you wish to find the origin.</li>
 
-                                    <div class="form-group">
+                                    <div class="form-group form-inline">
+                                        <label for="origin-first-name">Enter first name to search origin:</label>
+                                        <input type="text" class="form-control" id="origin-first-name" placeholder="First Name Here">
+                                        <!-- added first name form  -->
                                         <label for="origin-last-name">Enter last name to search origin:</label>
                                         <input type="text" class="form-control" id="origin-last-name" placeholder="Last Name Here">
                                     </div>
@@ -147,7 +155,7 @@
                                         first, one middle, and/or two middle names. You will need to enter the letter
                                         you wish each name to begin with for the search.</li>
                                     <div class="input-group-prepend">
-                                        <select class="form-control" id="inputGroupSelect04">
+                                        <select class="form-control" id="numNames">
                                             <option selected>Now many names would you like?</option>
                                             <option id="inputGrp2Sel1" value="1">First Name Only</option>
                                             <option id="inputGrp2Sel2" value="2">First Name and Middle Name</option>
@@ -159,8 +167,9 @@
 
                                     <li>Finally, press the 'search' button to begin your search!</li>
                                     <div class="input-group-append">
-                                        <button class="btn" id="opt2-btn" type="button">Search</button>
+                                        <button class="btn" id="opt2-search" type="button">Search</button>
                                     </div>
+
 
                                 </ul>
                             </p>
@@ -243,6 +252,7 @@
         </div>
 
         <div id="babies-img">
+
             <div class="stage">
                 <figure class="ball bubble" id="pic1"><span class="shadow"></span></figure>
             </div>
@@ -301,6 +311,8 @@
     <script src="./js/main.js"></script>
 
     <!--Kim Script End-->
+
+
 </body>
 
 </html>
