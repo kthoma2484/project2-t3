@@ -1,18 +1,618 @@
-.col-sm-12 {
+body {
+  display: flex;
+  background-image: url("../img/animatedclouds.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  max-height: 500px;
+  text-align: center;  
+}
+
+/*---bubbles code starts--------------*/
+
+/*----image 1-----*/
+.ball {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: url("../img/greetings-baby1.jpg") no-repeat;
+  background-size: cover;
+  
+}
+.ball:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 0px,url("../img/greetings-baby1.jpg") no-repeat 58%);
+  -webkit-filter: blur(5px);
+  z-index: 2;
+}
+.ball:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 5%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border-radius: 100%;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+  z-index: 2;
+  -webkit-transform: rotateZ(-30deg);
+  transform: rotateZ(-30deg); 
+}
+.ball .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, url("../img/greetings-baby1.jpg") no-repeat, url("../img/greetings-baby1.jpg") no-repeat 40%, url("../img/greetings-baby1.jpg") no-repeat 50%);
+    -webkit-transform: rotateX(90deg) translateZ(-160px);
+    transform: rotateX(90deg) translateZ(-160px);
+    z-index: 1; }
+    .ball.plain {
+      background: black; }
+      .ball.plain:before, .ball.plain:after {
+        display: none; 
+      }
+        .ball.bubble {
+          background: radial-gradient(circle at 50% 55%, url("../img/greetings-baby1.jpg") no-repeat, url("../img/greetings-baby1.jpg") no-repeat 40%, url("../img/greetings-baby1.jpg") no-repeat 60%), url("../img/greetings-baby1.jpg") no-repeat 40%, url("../img/greetings-baby1.jpg") no-repeat;
+          -webkit-animation: bubble-anim 2s ease-out infinite;
+          animation: bubble-anim 2s ease-out infinite; 
+        }
+.ball.bubble:before {
+      -webkit-filter: blur(0);
+      filter: blur(0);
+      height: 80%;
+      width: 40%;
+      background: radial-gradient(circle at 130% 130%, url("../img/greetings-baby1.jpg") no-repeat, url("../img/greetings-baby1.jpg") no-repeat 0, url("../img/greetings-baby1.jpg") no-repeat 46%, url("../img/greetings-baby1.jpg") no-repeat 50%, url("../img/greetings-baby1.jpg") no-repeat 58%, url("../img/greetings-baby1.jpg") no-repeat 60%, url("../img/greetings-baby1.jpg") no-repeat 100%);
+      -webkit-transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
+      transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg); }
+    .ball.bubble:after {
+      display: block;
+      background: radial-gradient(circle at 50% 80%, url("../img/greetings-baby1.jpg") no-repeat, url("../img/greetings-baby1.jpg") no-repeat 74%, url("../img/greetings-baby1.jpg") no-repeat 84%, url("../img/greetings-baby1.jpg") no-repeat 100%); 
+    }
+.stage {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  margin: 20px;
+  -webkit-perspective: 1200px;
+  -moz-perspective: 1200px;
+  -ms-perspective: 1200px;
+  -o-perspective: 1200px;
+  perspective: 1200px;
+  -webkit-perspective-origin: 50% 50%;
+  -moz-perspective-origin: 50% 50%;
+  -ms-perspective-origin: 50% 50%;
+  -o-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+}
+
+@-webkit-keyframes bubble-anim {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+
+  20% {
+    -webkit-transform: scaleY(0.95) scaleX(1.05);
+    transform: scaleY(0.95) scaleX(1.05); }
+
+  48% {
+    -webkit-transform: scaleY(1.1) scaleX(0.9);
+    transform: scaleY(1.1) scaleX(0.9); }
+
+  68% {
+    -webkit-transform: scaleY(0.98) scaleX(1.02);
+    transform: scaleY(0.98) scaleX(1.02); }
+
+  80% {
+    -webkit-transform: scaleY(1.02) scaleX(0.98);
+    transform: scaleY(1.02) scaleX(0.98); }
+
+  97%, 100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+@keyframes bubble-anim {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+
+  20% {
+    -webkit-transform: scaleY(0.95) scaleX(1.05);
+    transform: scaleY(0.95) scaleX(1.05); }
+
+  48% {
+    -webkit-transform: scaleY(1.1) scaleX(0.9);
+    transform: scaleY(1.1) scaleX(0.9); }
+
+  68% {
+    -webkit-transform: scaleY(0.98) scaleX(1.02);
+    transform: scaleY(0.98) scaleX(1.02); }
+
+  80% {
+    -webkit-transform: scaleY(1.02) scaleX(0.98);
+    transform: scaleY(1.02) scaleX(0.98); }
+
+  97%, 100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+    /*----image 2-----*/
+
+    .ball2 {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-radius: 50%;
+      position: relative;
+      background: url("../img/greetings-baby2.jpg") no-repeat;
+      background-size: cover;
+      
+    }
+    .ball2:before {
+      content: "";
+      position: absolute;
+      top: 1%;
+      left: 5%;
+      width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 0px,url("../img/greetings-baby2.jpg") no-repeat 58%);
+      -webkit-filter: blur(5px);
+      z-index: 2;
+    }
+    .ball2:after {
+      content: "";
+      position: absolute;
+      display: none;
+      top: 5%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+      border-radius: 100%;
+      -webkit-filter: blur(1px);
+      filter: blur(1px);
+      z-index: 2;
+      -webkit-transform: rotateZ(-30deg);
+      transform: rotateZ(-30deg); 
+    }
+    .ball2 .shadow {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, url("../img/greetings-baby2.jpg") no-repeat, url("../img/greetings-baby2.jpg") no-repeat 40%, url("../img/greetings-baby2.jpg") no-repeat 50%);
+        -webkit-transform: rotateX(90deg) translateZ(-160px);
+        transform: rotateX(90deg) translateZ(-160px);
+        z-index: 1; }
+        .ball2.plain {
+          background: black; }
+          .ball2.plain:before, .ball.plain:after {
+            display: none; 
+          }
+            .ball2.bubble {
+              background: radial-gradient(circle at 50% 55%, url("../img/greetings-baby2.jpg") no-repeat, url("../img/greetings-baby2.jpg") no-repeat 40%, url("../img/greetings-baby2.jpg") no-repeat 60%), url("../img/greetings-baby2.jpg") no-repeat 40%, url("../img/greetings-baby2.jpg") no-repeat;
+              -webkit-animation: bubble-anim 2s ease-out infinite;
+              animation: bubble-anim 2s ease-out infinite; 
+            }
+    .ball2.bubble:before {
+          -webkit-filter: blur(0);
+          filter: blur(0);
+          height: 80%;
+          width: 40%;
+          background: radial-gradient(circle at 130% 130%, url("../img/greetings-baby2.jpg") no-repeat, url("../img/greetings-baby2.jpg") no-repeat 0, url("../img/greetings-baby2.jpg") no-repeat 46%, url("../img/greetings-baby2.jpg") no-repeat 50%, url("../img/greetings-baby2.jpg") no-repeat 58%, url("../img/greetings-baby2.jpg") no-repeat 60%, url("../img/greetings-baby2.jpg") no-repeat 100%);
+          -webkit-transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
+          transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg); }
+        .ball2.bubble:after {
+          display: block;
+          background: radial-gradient(circle at 50% 80%, url("../img/greetings-baby2.jpg") no-repeat, url("../img/greetings-baby2.jpg") no-repeat 74%, url("../img/greetings-baby2.jpg") no-repeat 84%, url("../img/greetings-baby2.jpg") no-repeat 100%); 
+        }
+    
+/*----image 3-----*/
+.ball3 {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: url("../img/greetings-baby3.jpg") no-repeat;
+  background-size: cover;
+  
+}
+.ball3:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 0px,url("../img/greetings-baby3.jpg") no-repeat 58%);
+  -webkit-filter: blur(5px);
+  z-index: 2;
+}
+.ball3:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 5%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border-radius: 100%;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+  z-index: 2;
+  -webkit-transform: rotateZ(-30deg);
+  transform: rotateZ(-30deg); 
+}
+.ball3 .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, url("../img/greetings-baby3.jpg") no-repeat, url("../img/greetings-baby3.jpg") no-repeat 40%, url("../img/greetings-baby3.jpg") no-repeat 50%);
+    -webkit-transform: rotateX(90deg) translateZ(-160px);
+    transform: rotateX(90deg) translateZ(-160px);
+    z-index: 1; }
+    .ball3.plain {
+      background: black; }
+      .ball3.plain:before, .ball.plain:after {
+        display: none; 
+      }
+        .ball3.bubble {
+          background: radial-gradient(circle at 50% 55%, url("../img/greetings-baby3.jpg") no-repeat, url("../img/greetings-baby3.jpg") no-repeat 40%, url("../img/greetings-baby3.jpg") no-repeat 60%), url("../img/greetings-baby3.jpg") no-repeat 40%, url("../img/greetings-baby3.jpg") no-repeat;
+          -webkit-animation: bubble-anim 2s ease-out infinite;
+          animation: bubble-anim 2s ease-out infinite; 
+        }
+.ball3.bubble:before {
+      -webkit-filter: blur(0);
+      filter: blur(0);
+      height: 80%;
+      width: 40%;
+      background: radial-gradient(circle at 130% 130%, url("../img/greetings-baby3.jpg") no-repeat, url("../img/greetings-baby3.jpg") no-repeat 0, url("../img/greetings-baby3.jpg") no-repeat 46%, url("../img/greetings-baby3.jpg") no-repeat 50%, url("../img/greetings-baby3.jpg") no-repeat 58%, url("../img/greetings-baby3.jpg") no-repeat 60%, url("../img/greetings-baby3.jpg") no-repeat 100%);
+      -webkit-transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
+      transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg); }
+    .ball3.bubble:after {
+      display: block;
+      background: radial-gradient(circle at 50% 80%, url("../img/greetings-baby3.jpg") no-repeat, url("../img/greetings-baby3.jpg") no-repeat 74%, url("../img/greetings-baby3.jpg") no-repeat 84%, url("../img/greetings-baby3.jpg") no-repeat 100%); 
+    }
+
+/*----image 4-----*/
+.ball4 {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: url("../img/greetings-baby4.jpg") no-repeat;
+  background-size: cover;
+  
+}
+.ball4:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 0px,url("../img/greetings-baby4.jpg") no-repeat 58%);
+  -webkit-filter: blur(5px);
+  z-index: 2;
+}
+.ball4:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 5%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border-radius: 100%;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+  z-index: 2;
+  -webkit-transform: rotateZ(-30deg);
+  transform: rotateZ(-30deg); 
+}
+.ball4 .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, url("../img/greetings-baby4.jpg") no-repeat, url("../img/greetings-baby4.jpg") no-repeat 40%, url("../img/greetings-baby4.jpg") no-repeat 50%);
+    -webkit-transform: rotateX(90deg) translateZ(-160px);
+    transform: rotateX(90deg) translateZ(-160px);
+    z-index: 1; }
+    .ball4.plain {
+      background: black; }
+      .ball4.plain:before, .ball.plain:after {
+        display: none; 
+      }
+        .ball4.bubble {
+          background: radial-gradient(circle at 50% 55%, url("../img/greetings-baby4.jpg") no-repeat, url("../img/greetings-baby4.jpg") no-repeat 40%, url("../img/greetings-baby4.jpg") no-repeat 60%), url("../img/greetings-baby4.jpg") no-repeat 40%, url("../img/greetings-baby4.jpg") no-repeat;
+          -webkit-animation: bubble-anim 2s ease-out infinite;
+          animation: bubble-anim 2s ease-out infinite; 
+        }
+.ball4.bubble:before {
+      -webkit-filter: blur(0);
+      filter: blur(0);
+      height: 80%;
+      width: 40%;
+      background: radial-gradient(circle at 130% 130%, url("../img/greetings-baby4.jpg") no-repeat, url("../img/greetings-baby4.jpg") no-repeat 0, url("../img/greetings-baby4.jpg") no-repeat 46%, url("../img/greetings-baby4.jpg") no-repeat 50%, url("../img/greetings-baby4.jpg") no-repeat 58%, url("../img/greetings-baby4.jpg") no-repeat 60%, url("../img/greetings-baby4.jpg") no-repeat 100%);
+      -webkit-transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
+      transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg); }
+    .ball4.bubble:after {
+      display: block;
+      background: radial-gradient(circle at 50% 80%, url("../img/greetings-baby4.jpg") no-repeat, url("../img/greetings-baby4.jpg") no-repeat 74%, url("../img/greetings-baby4.jpg") no-repeat 84%, url("../img/greetings-baby4.jpg") no-repeat 100%); 
+    }
+
+/*----image 5-----*/
+.ball5 {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: url("../img/greetings-baby6.jpg") no-repeat;
+  background-size: cover;
+  
+}
+.ball5:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 0px,url("../img/greetings-baby6.jpg") no-repeat 58%);
+  -webkit-filter: blur(5px);
+  z-index: 2;
+}
+.ball5:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 5%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border-radius: 100%;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+  z-index: 2;
+  -webkit-transform: rotateZ(-30deg);
+  transform: rotateZ(-30deg); 
+}
+.ball5 .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, url("../img/greetings-baby6.jpg") no-repeat, url("../img/greetings-baby6.jpg") no-repeat 40%, url("../img/greetings-baby6.jpg") no-repeat 50%);
+    -webkit-transform: rotateX(90deg) translateZ(-160px);
+    transform: rotateX(90deg) translateZ(-160px);
+    z-index: 1; }
+    .ball5.plain {
+      background: black; }
+      .ball5.plain:before, .ball.plain:after {
+        display: none; 
+      }
+        .ball5.bubble {
+          background: radial-gradient(circle at 50% 55%, url("../img/greetings-baby6.jpg") no-repeat, url("../img/greetings-baby6.jpg") no-repeat 40%, url("../img/greetings-baby6.jpg") no-repeat 60%), url("../img/greetings-baby6.jpg") no-repeat 40%, url("../img/greetings-baby6.jpg") no-repeat;
+          -webkit-animation: bubble-anim 2s ease-out infinite;
+          animation: bubble-anim 2s ease-out infinite; 
+        }
+.ball5.bubble:before {
+      -webkit-filter: blur(0);
+      filter: blur(0);
+      height: 80%;
+      width: 40%;
+      background: radial-gradient(circle at 130% 130%, url("../img/greetings-baby6.jpg") no-repeat, url("../img/greetings-baby6.jpg") no-repeat 0, url("../img/greetings-baby6.jpg") no-repeat 46%, url("../img/greetings-baby6.jpg") no-repeat 50%, url("../img/greetings-baby6.jpg") no-repeat 58%, url("../img/greetings-baby6.jpg") no-repeat 60%, url("../img/greetings-baby6.jpg") no-repeat 100%);
+      -webkit-transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
+      transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg); }
+    .ball5.bubble:after {
+      display: block;
+      background: radial-gradient(circle at 50% 80%, url("../img/greetings-baby6.jpg") no-repeat, url("../img/greetings-baby6.jpg") no-repeat 74%, url("../img/greetings-baby6.jpg") no-repeat 84%, url("../img/greetings-baby6.jpg") no-repeat 100%); 
+    }
+
+    /*----image 6-----*/
+.ball6 {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: url("../img/greetings-baby5.jpg") no-repeat;
+  background-size: cover;
+  
+}
+.ball6:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 0px,url("../img/greetings-baby5.jpg") no-repeat 58%);
+  -webkit-filter: blur(5px);
+  z-index: 2;
+}
+.ball6:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 5%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border-radius: 100%;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+  z-index: 2;
+  -webkit-transform: rotateZ(-30deg);
+  transform: rotateZ(-30deg); 
+}
+.ball6 .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, url("../img/greetings-baby5.jpg") no-repeat, url("../img/greetings-baby5.jpg") no-repeat 40%, url("../img/greetings-baby5.jpg") no-repeat 50%);
+    -webkit-transform: rotateX(90deg) translateZ(-160px);
+    transform: rotateX(90deg) translateZ(-160px);
+    z-index: 1; }
+    .ball6.plain {
+      background: black; }
+      .ball6.plain:before, .ball.plain:after {
+        display: none; 
+      }
+        .ball6.bubble {
+          background: radial-gradient(circle at 50% 55%, url("../img/greetings-baby5.jpg") no-repeat, url("../img/greetings-baby5.jpg") no-repeat 40%, url("../img/greetings-baby5.jpg") no-repeat 60%), url("../img/greetings-baby5.jpg") no-repeat 40%, url("../img/greetings-baby5.jpg") no-repeat;
+          -webkit-animation: bubble-anim 2s ease-out infinite;
+          animation: bubble-anim 2s ease-out infinite; 
+        }
+.ball6.bubble:before {
+      -webkit-filter: blur(0);
+      filter: blur(0);
+      height: 80%;
+      width: 40%;
+      background: radial-gradient(circle at 130% 130%, url("../img/greetings-baby5.jpg") no-repeat, url("../img/greetings-baby5.jpg") no-repeat 0, url("../img/greetings-baby5.jpg") no-repeat 46%, url("../img/greetings-baby5.jpg") no-repeat 50%, url("../img/greetings-baby5.jpg") no-repeat 58%, url("../img/greetings-baby5.jpg") no-repeat 60%, url("../img/greetings-baby5.jpg") no-repeat 100%);
+      -webkit-transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
+      transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg); }
+    .ball6.bubble:after {
+      display: block;
+      background: radial-gradient(circle at 50% 80%, url("../img/greetings-baby5.jpg") no-repeat, url("../img/greetings-baby5.jpg") no-repeat 74%, url("../img/greetings-baby5.jpg") no-repeat 84%, url("../img/greetings-baby5.jpg") no-repeat 100%); 
+    }
+
+/* #pic1{
+  position: absolute;
+  left: -5%;
+  animation: mymove 25s infinite;
+  animation-direction: normal;
+}
+#pic2 {
+  position: absolute;
+  left: -10%;
+  animation: mymove 28s infinite;
+  animation-direction: normal;
+}
+
+#pic1 {
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+}
+
+#pic2 {
+  animation-delay: 4s;  
+  -webkit-animation-delay: 4s;
+}
+
+@keyframes mymove
+	{
+	from {left: -300%;}	/*off-screen left (adjust for image width)*/
+	/* to {left: 1000%;}		/*off-screen right*/
+/* }
+@-webkit-keyframes mymove/*Chrome*/
+  /* {
+	from {left: -300%;}	/*off-screen left (adjust for image width)*/
+	/* to {left: 1000%;}		/*off-screen right*/
+/* } */
+  .stage {
+    float: center; 
+  } 
+/*---bubles code ends------------------------------*/
+
+
+
+.container {
+  text-align: center;
+  max-width: 1200px
+}
+
+.main-pg {
+  background-color: rgba(197, 107, 5, 0.7);
+  overflow: auto;
 }
 
 .row {
   display: flex;
   flex: 1;
+  max-width: 700px;
+  font-family:'Architects Daughter', 'Handlee', 'Indie Flower',  'Kalam','cursive', sans-serif;
+  text-shadow: 2px 2px rgb(22, 97, 178);
+  font-size: 40px;
+  font-weight: 24px;
+  padding: 0 20px;
 }
 
-.logo {
-  font-size: 60px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
-  justify-content: center;
-  margin: 20px 0;
+.col-sm-12 {
+  display: flex;
+  font-family:'Handlee', 'Indie Flower',  'Kalam','Architects Daughter', 'cursive', sans-serif;
+  font-size: 30px;
+  font-weight: 16px;
 }
+
+#logo {
+  display: flex;
+  background-image: url("../img/datababylogo1.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  max-width: 800px;
+  height: 150px;
+  justify-content: center;
+  margin: 10px 0;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: 3;
+
+}
+
+
+#name1,
+#origin-name1 {
+  display: flex;
+  max-width: 175px;
+}
+
 
 .hidden {
   display: none;
+}
+
+
+/*----------------------------------resizing--------------------------------------------*/
+
+/* for screens 1024 or less */
+@media (max-width: 1024px) {
+  
+  body {
+  background-size: cover;
+  }
+
+
+
+}
+
+
+/* for screens 780 or less */
+@media (max-width: 780px) {
+
+}
+
+
+/* for screens 540 or less */
+@media (max-width: 540) {
+
 }
