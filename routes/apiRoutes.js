@@ -3,22 +3,24 @@ module.exports = function (app) {
   
   
   //Option1 RandomNameGenerator
-  app.get("/api/wild/:letter/:gender", function(req, res) {  
+  app.get("/api/gender/f", function(req, res) { //FEMALE
     db.Names.findAll({
       where : {
-        name: {
-          $like:  req.params.letter + "%"},
-        gender: req.params.gender}
+        gender: "F"}
     }).then(function(dbName) {
       res.send(dbName);
     });
   });
-  app.get("/api/wild/:letter/", function(req, res) {  
+  app.get("/api/gender/m", function(req, res) { //MALE
     db.Names.findAll({
       where : {
-        name: {
-          $like:  req.params.letter + "%"}}
+        gender: "M"}
     }).then(function(dbName) {
+      res.send(dbName);
+    });
+  });
+  app.get("/api/findall/", function(req, res) { //EITHER
+    db.Names.findAll({}).then(function(dbName) {
       res.send(dbName);
     });
   });
