@@ -24,6 +24,8 @@ $(function () {
         console.log("this selected");
         $(".intro").addClass("hidden");
         $(".opt2-questions").removeClass("hidden");
+        $("form").addClass("form-drop");
+        $("form").removeClass("form-row");
         $(".opt1").addClass("hidden");
         $(".opt3").addClass("hidden");
         $(".initial-opts").addClass("hidden");
@@ -34,6 +36,8 @@ $(function () {
         console.log("this selected");
         $(".intro").addClass("hidden");
         $(".opt3-questions").removeClass("hidden");
+        $("form").addClass("form-drop");
+        $("form").removeClass("form-row");
         $(".opt1").addClass("hidden");
         $(".opt2").addClass("hidden");
         $(".initial-opts").addClass("hidden");

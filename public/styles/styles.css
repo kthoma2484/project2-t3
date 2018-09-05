@@ -86,7 +86,7 @@ p {
 
 form {
   justify-content: center;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .form-row {
@@ -130,7 +130,7 @@ form {
 #name1,
 #origin-name1 {
   display: flex;
-  max-width: 175px;
+  width: 300px;
 }
 
 #starts-with,
@@ -157,6 +157,10 @@ form {
   color: white;
 }
 
+.input-group-prepend,
+#last-name {
+  width: 300px;
+}
 #reset {
   position: absolute;
   right: 20px;
