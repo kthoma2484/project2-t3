@@ -82,20 +82,20 @@ $(function () {
         }
     });
 
-<<<<<<< HEAD
     //Craig utilities
-    $('#starts-with').on('change', function(){
-      console.log("Name1 Value:", $('#name1').val())
+    $("#starts-with").on("change", function(){
+      console.log("Name1 Value:", $("#name1").val())
     })
     
-    $('#opt1-search').on('click', function(){
-      let numNames = $('#inputGroupSelect01').val();
+    //RANDOM NAME GENERATOR OPTION 1
+    $("#opt1-search").on("click", function(){
+      let numNames = $("#inputGroupSelect01").val();
       console.log("numNames: ", numNames);
-      let firstLetter = $('#name1').val();
+      let firstLetter = $("#name1").val();
       console.log("firstLetterVal:", firstLetter);
-      let gender = $('#inputGroupSelect02').val();
+      let gender = $("#inputGroupSelect02").val();
       console.log("GenderVal:", gender); 
-      let lastName = $('#last-name').val();
+      let lastName = $("#last-name").val();
       console.log("lastName:", lastName);
     
       // Do an api request depending on conditions above
@@ -115,20 +115,38 @@ $(function () {
           alert("Data: " + data + "\nStatus: " + status);
       });
       }
+  
+  
+    });
+    //SEARCH BY FILTER OPTION3
+    $("#opt3-search").on("click", function(){
+      let gender = $("#inputGroupSelect05").val();
+      let year = $("#inputGroupSelect08").val();
+      console.log("Gender:", gender, "Year", year);
+      if(gender == 3){ //either
+        $.get(`/api/year/${year}`);
+          // console.log(data);
+          // alert("Data: " + data + "\nStatus: " + status);
+        // }); 
+      }
+      else if(gender == 2){ //boy
+        $.get(`/api/year/${year}/m`).then(function(data){
+          console.log(data);
+          alert("Data: " + data + "\nStatus: " + status);
+        }); 
+      }
+      else if(gender == 1){ //girl
+        $.get(`/api/year/${year}/f`).then(function(data){
+          console.log(data);
+          alert("Data: " + data + "\nStatus: " + status);
+        }); 
+      }
       
-     
-
-    function renderModal(data){
-
-    }
-  
-  
-  });
+    });
   //-----------------------------------------------------------------
   
   
 });
-=======
  // If Random Name search is selected...
  $("#inputGroupSelect04").change(function () {
         
@@ -160,8 +178,7 @@ particlesJS.load("particles-js", "js/particles.json", function() {
     console.log("callback - particles.js config loaded");
   });
 
-});
+
 
 
 //-----------------------------------------------------------------
->>>>>>> b220f6a108744e2dc1f294d415d9b747c4ec0c34
