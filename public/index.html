@@ -27,33 +27,35 @@
         <div class="container">
 
             <div class="row intro">
-                <p>Welcome to Da-Ta-Baby - the baby name finder!
-                    <br><br>
-                    Just pick an option for how you would like to search for a baby name. Each option allows you to
+                <h1>Welcome to Da-Ta-Baby - the baby name finder!</h1>
+
+                <p> Just pick an option for how you would like to search for a baby name. Each option allows you to
                     filter your search based on the type of search you select. The random name is a luck of the draw
                     search. The search by origin will request a last name from you, search that last name, and find
                     suggest first and/or middle names that have the same country origin. And finally, the search by
-                    common U.S. names will suggest names based on popular names recorded in U.S. records since 1880!
-                    <br>
-                    We hope you enjoy our application selections! Get ready to find your baby's perfect name!
+                    common U.S. names will suggest names based on popular names recorded in U.S. records since 1880! We
+                    hope you enjoy our application selections! Get ready to find your baby's perfect name!
                 </p>
+
+                <h2 style="text-decoration: underline;">Select one of the search items to begin!</h2>
             </div>
 
 
-            <form class="flex-column">
+            <form class="row form-row">
                 <div class="form-group row search-opts form-check opt1">
-                    <div class="col-sm-12">
-
+                    <div class="col-sm-12 ">
                         <div class="initial-opts">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="opt1Radios" value="option1">
                             <label class="form-check-label" for="Radios1">
-                                <h3>Option 1 - Random name search</h3>
+                                <h2>Option 1 - Random name search</h2>
                             </label>
                         </div>
 
                         <div class="opt1-questions hidden">
-                            <p class="instructions">
-                                <em>Instructions for 'random name rearch':</em>
+                            <div class="instructions">
+                                <h2><em>Instructions for 'random name rearch':</em></h2>
+                                <br>
+
                                 <ul>
                                     <li>First, select the how many names you wish the full name to include - e.g. a
                                         first, one middle, and/or two middle names.</li>
@@ -67,7 +69,11 @@
                                         </select>
                                     </div>
 
-                                    <div class="first-letter hidden" id="starts-with"></div>
+
+                                    <div class="first-letter hidden" id="starts-with">
+                                        <br>
+                                    </div>
+
 
                                     <li>Next, select the gender of the name you wish to search for. If gender is
                                         irrelevant, select 'either'.</li>
@@ -80,6 +86,7 @@
                                             <option value="3">Either</option>
                                         </select>
                                     </div>
+                                    <br>
 
                                     <li>Then, type the last name you want included with the full name in the input box
                                         shown.</li>
@@ -88,6 +95,7 @@
                                         <label for="last-name">Enter Your Last Name:</label>
                                         <input type="text" class="form-control" id="last-name" placeholder="Your Last Name Here">
                                     </div>
+                                    <br>
 
                                     <li>Finally, press the 'search' button to begin your search!</li>
                                     <div class="input-group-append">
@@ -95,7 +103,7 @@
                                     </div>
 
                                 </ul>
-                            </p>
+                            </div>
 
                         </div>
 
@@ -109,7 +117,7 @@
                         <div class="initial-opts">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="opt2Radios" value="option2">
                             <label class="form-check-label" for="Radios2">
-                                <h3>Option 2 - Search names inspired by origin</h3>
+                                <h2>Option 2 - Search names inspired by origin</h2>
                             </label>
                         </div>
 
@@ -168,7 +176,7 @@
                         <div class="initial-opts">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="opt3Radios" value="option3">
                             <label class="form-check-label" for="Radios3">
-                                <h3>Option 3 - Filter by common U.S. names</h3>
+                                <h2>Option 3 - Filter by common U.S. names</h2>
                             </label>
                         </div>
 
@@ -184,36 +192,36 @@
                                             irrelevant, select 'either'.</li>
 
 
-                                            <div class="input-group-prepend">
-                                                    <select class="form-control" id="inputGroupSelect05">
-                                                        <option selected>What gender for name search?</option>
-                                                        <option value="1">Girl Name</option>
-                                                        <option value="2">Boy Name</option>
-                                                        <option value="3">Either</option>
-                                                    </select>
-                                                </div>
+                                        <div class="input-group-prepend">
+                                            <select class="form-control" id="inputGroupSelect05">
+                                                <option selected>What gender for name search?</option>
+                                                <option value="1">Girl Name</option>
+                                                <option value="2">Boy Name</option>
+                                                <option value="3">Either</option>
+                                            </select>
+                                        </div>
 
                                         <li>Then, select the decade you want to search for name popularity during that
                                             time
                                             period.</li>
 
-                                            <select class="form-control" id="inputGroupSelect04">
-                                                    <option selected>Search by decade (from 1880)?</option>
-                                                    <option id="inputGrp3Sel1" value="1">1880-1889</option>
-                                                    <option id="inputGrp3Sel2" value="2">1890-1899</option>
-                                                    <option id="inputGrp3Sel3" value="3">1900-1909</option>
-                                                    <option id="inputGrp3Sel4" value="3">1910-1919</option>
-                                                    <option id="inputGrp3Sel5" value="3">1920-1929</option>
-                                                    <option id="inputGrp3Sel6" value="3">1930-1939</option>
-                                                    <option id="inputGrp3Sel7" value="3">1940-1949</option>
-                                                    <option id="inputGrp3Sel8" value="3">1950-1959</option>
-                                                    <option id="inputGrp3Sel9" value="3">1960-1969</option>
-                                                    <option id="inputGrp3Sel10" value="3">1970-1979</option>
-                                                    <option id="inputGrp3Sel11" value="3">1980-1989</option>
-                                                    <option id="inputGrp3Sel12" value="3">1990-1999</option>
-                                                    <option id="inputGrp3Sel13" value="3">2000-2009</option>
-                                                    <option id="inputGrp3Sel14" value="3">2010-2014</option>
-                                                </select>
+                                        <select class="form-control" id="inputGroupSelect04">
+                                            <option selected>Search by decade (from 1880)?</option>
+                                            <option id="inputGrp3Sel1" value="1">1880-1889</option>
+                                            <option id="inputGrp3Sel2" value="2">1890-1899</option>
+                                            <option id="inputGrp3Sel3" value="3">1900-1909</option>
+                                            <option id="inputGrp3Sel4" value="3">1910-1919</option>
+                                            <option id="inputGrp3Sel5" value="3">1920-1929</option>
+                                            <option id="inputGrp3Sel6" value="3">1930-1939</option>
+                                            <option id="inputGrp3Sel7" value="3">1940-1949</option>
+                                            <option id="inputGrp3Sel8" value="3">1950-1959</option>
+                                            <option id="inputGrp3Sel9" value="3">1960-1969</option>
+                                            <option id="inputGrp3Sel10" value="3">1970-1979</option>
+                                            <option id="inputGrp3Sel11" value="3">1980-1989</option>
+                                            <option id="inputGrp3Sel12" value="3">1990-1999</option>
+                                            <option id="inputGrp3Sel13" value="3">2000-2009</option>
+                                            <option id="inputGrp3Sel14" value="3">2010-2014</option>
+                                        </select>
 
                                         <li>Finally, press the 'search' button to begin your search!</li>
 
@@ -228,13 +236,14 @@
 
 
             </form>
-            <div class="row justify-content-end align-self-end" style="margin: 5px">
+
+            <div class="row align-self-end" style="margin: 5px">
                 <button class="btn" id="reset" type="button">Reset</button>
             </div>
 
         </div>
 
-        <div clase"flex-column babies-img">
+        <div id="babies-img">
             <div class="stage">
                 <figure class="ball bubble" id="pic1"><span class="shadow"></span></figure>
             </div>

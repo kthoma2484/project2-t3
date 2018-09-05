@@ -7,10 +7,12 @@ $(function () {
     //let data = {letter: [letters]};
 
     // If option 1 search then show option 1 items and remove options 2 and 3
-    $(".opt1").on("click", function () {
+    $(".opt1").change(function () {
         console.log("this selected");
         $(".intro").addClass("hidden");
         $(".opt1-questions").removeClass("hidden");
+        $("form").addClass("form-drop");
+        $("form").removeClass("form-row");
         $(".opt2").addClass("hidden");
         $(".opt3").addClass("hidden");
         $(".initial-opts").addClass("hidden");
@@ -18,7 +20,7 @@ $(function () {
     });
 
 
-    $(".opt2").on("click", function () {
+    $(".opt2").change(function () {
         console.log("this selected");
         $(".intro").addClass("hidden");
         $(".opt2-questions").removeClass("hidden");
@@ -28,7 +30,7 @@ $(function () {
         $(".opt2").unbind();
     });
 
-    $(".opt3").on("click", function () {
+    $(".opt3").change(function () {
         console.log("this selected");
         $(".intro").addClass("hidden");
         $(".opt3-questions").removeClass("hidden");
@@ -132,9 +134,6 @@ $(function () {
   
   
   });
-  //-----------------------------------------------------------------
-  
-  
 
 
  // If Origin name search is selected...
