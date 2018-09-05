@@ -3,6 +3,7 @@ body {
   background-image: url("../img/animatedclouds.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: blueviolet;
   max-height: 100%;
   justify-content: center;  
   font-family: 'Handlee', 'Indie Flower', 'Architects Daughter', 'Kalam','cursive', sans-serif;
@@ -15,8 +16,9 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   width: 800px;
-  height: 250px;
-  margin: 5px;
+  height: 180px;
+  padding-bottom: 0;
+  margin-top: 20px;
   animation-duration: 2s;
   animation-delay: 1s;
   animation-iteration-count: 3;
@@ -25,18 +27,41 @@ body {
 .intro {
   display: flex;
   width: 100%;
-  height: 250px;
+  height: 400px;
   padding: 10px;
   margin: 5px;
-  font-size: 20px;
-  font-weight: 700;
-  text-align: center;
-  overflow: auto;
+  justify-content: center;  
+}
+
+.instructions,
+ul,
+li {
+  font-size: 18px;
+  font-size: 24px;
+
 }
 
 .instructions,
 ul {
-  font-size: 18px;
+  height: 600px; 
+}
+
+.instructions {
+  width: 900px;
+
+}
+
+h1,
+h2 {
+  font-weight: 1000;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: justify;
+  margin-bottom: 0;
 }
 
 .main-pg {
@@ -44,39 +69,58 @@ ul {
   flex-direction: column;
   align-items: center;
   margin: 0;
-  width: 1200px;
-  height: 800px;
+  width: 1300px;
+  height: 1000px;
 }
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
-  background-color: rgba(197, 107, 5, 0.7);
-  width: 1200px;
-  height: 800px;
+  background-color: rgba(231, 239, 240, 0.6);
+  width: 1300px;
+  max-height: 1000px;
+  min-height: 600px;
   margin: 0;
-  overflow: hidden;
 }
 
-.flex-column {
+form {
+  justify-content: center;
+  overflow: auto;
+}
+
+.form-row {
   display: flex;
-  flex: 1;
-  max-width: 700px;
-  height: 250px;
+  width: 1000px;
+  height: 200px;
+  padding: 5px 0;
+}
+
+.form-drop {
+  display: flex;
+  width: 1000px;
+  height: 800px;
+  padding: 5px 0;
+}
+
+.form-group {
+  display: flex;
+  width: 1000px;
+  height: 50px;
+  margin: 0;
+}
+
+.opt1-questions,
+.opt2-questions,
+.opt3-questions {
+  height: 600px;
 }
 
 .col-sm-12 {
   display: flex;
-  width: 1200px;
+  width: 1300px;
   font-size: 30px;
   font-weight: 16px;
-}
-
-form,
-.col-sm-12,
-.form-group,
-.row {
-  width: 1000px;
 }
 
 .babies-img {
@@ -86,17 +130,44 @@ form,
 #name1,
 #origin-name1 {
   display: flex;
-  max-width: 175px;
+  width: 300px;
 }
 
 #starts-with,
 #origin-starts-with {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+
+#babies-img {
+  display: flex;
+  margin: 40px 0;
 }
 
 .hidden {
   display: none;
+}
+
+#opt1-btn,
+#opt2-btn,
+#opt3-btn {
+  background-color: rgb(49, 133, 16);
+  font-size: 20px;
+  font-weight: bolder;
+  color: white;
+}
+
+.input-group-prepend,
+#last-name {
+  width: 300px;
+}
+#reset {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  background-color: darkmagenta;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 /*---photobubbles code starts--------------*/
@@ -602,6 +673,9 @@ form,
  
   #logo {
     width: 700px;
+    height: 120px;
+    padding: 0;
+    margin: 10px 0;
     background-size: 100%;
   }
 
@@ -613,40 +687,53 @@ form,
 
 
    .intro {
-    height: 300px;
+    height: 600px;
     padding: 5px;
     font-size: 16px;
     font-weight: 500;
+    overflow: auto;
   }
   
   .instructions,
   ul {
     font-size: 14px;
   }
+
+  h1,
+  h2 {
+    font-size: 35px;
+    margin: 20px;
+  }
   
-  .main-pg,
+  .main-pg {
+    width: 800px;
+    height: 1366px;
+  }
+
   .container {
     width: 800px;
-    height: 800px;
+    height: 900px;
+    overflow: hidden;
   }
   
   .flex-column {
-    height: 400px;
+    height: 800px;
     width: 100%
   }
   
   .col-sm-12 {
     display: flex;
-    width: 800px;
+    width: 700px;
     font-size: 20px;
     font-weight: 12px;
   }
   
+  intro,
   form,
   .col-sm-12,
   .form-group,
   .row {
-    width: 500px;
+    width: 750px;
   }
 }
  
