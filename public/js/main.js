@@ -90,7 +90,7 @@ $(function () {
     });
 
 
-    //Craig utilities
+    ////////////////////////////////////// Craig utilities /////////////////////////////
     $('#starts-with').on('change', function () {
         console.log("Name1 Value:", $('#name1').val())
     })
@@ -98,28 +98,80 @@ $(function () {
     $('#opt1-btn').on('click', function () {
         let numNames = $('#inputGroupSelect01').val();
         console.log("numNames: ", numNames);
-        let firstLetter = $('#name1').val();
-        console.log("firstLetterVal:", firstLetter);
+        // let firstLetter = $('#name1').val();
+        // console.log("firstLetterVal:", firstLetter);
         let gender = $('#inputGroupSelect02').val();
         console.log("GenderVal:", gender);
         let lastName = $('#last-name').val();
         console.log("lastName:", lastName);
 
         // Do an api request depending on conditions above
-        if (gender == 1) { //girl
-            $.get(`/api/wild/${firstLetter}/f`).then(function (data) {
-                console.log(data);
-                alert("Data: " + data + "\nStatus: " + status);
+        if (gender === "1") { //girl
+            $.get(`/api/gender/f`).then(function (data) {
+                let randomNumber1 =  Math.floor(Math.random() * Math.floor(data.length));
+                let randomNumber2 =  Math.floor(Math.random() * Math.floor(data.length));
+                let randomNumber3 =  Math.floor(Math.random() * Math.floor(data.length));
+
+                if (numNames === "1") {
+                    alert(`Welcome baby ${data[randomNumber1].name} ${lastName} `);
+                    console.log("data", data);
+                }
+
+                if (numNames === "2") {
+                    alert(`Welcome baby ${data[randomNumber1].name} ${data[randomNumber2].name} ${lastName} `);
+                    console.log("data", data);
+                }
+
+                if (numNames === "3") {
+                    alert(`Welcome baby ${data[randomNumber1].name} ${data[randomNumber2].name} ${data[randomNumber3].name}   ${lastName} `);
+                    console.log("data", data);
+                }
+
+
             });
-        } else if (gender == 2) { //boy
-            $.get(`/api/wild/${firstLetter}/m`).then(function (data) {
-                console.log(data);
-                alert("Data: " + data + "\nStatus: " + status);
+        } else if (gender === "2") { //boy
+            $.get(`/api/gender/m`).then(function (data) {
+                let randomNumber1 =  Math.floor(Math.random() * Math.floor(data.length));
+                let randomNumber2 =  Math.floor(Math.random() * Math.floor(data.length));
+                let randomNumber3 =  Math.floor(Math.random() * Math.floor(data.length));
+
+                if (numNames === "1") {
+                    alert(`Welcome baby ${data[randomNumber1].name} ${lastName} `);
+                    console.log("data", data);
+                }
+
+                if (numNames === "2") {
+                    alert(`Welcome baby ${data[randomNumber1].name} ${data[randomNumber2].name} ${lastName} `);
+                    console.log("data", data);
+                }
+
+                if (numNames === "3") {
+                    alert(`Welcome baby ${data[randomNumber1].name} ${data[randomNumber2].name} ${data[randomNumber3].name}   ${lastName} `);
+                    console.log("data", data);
+                }
+
             });
+            
         } else { //all
-            $.get(`/api/wild/${firstLetter}/`).then(function (data) {
-                console.log(data);
-                alert("Data: " + data + "\nStatus: " + status);
+            $.get(`/api/findall`).then(function (data) {
+                let randomNumber1 =  Math.floor(Math.random() * Math.floor(data.length));
+                let randomNumber2 =  Math.floor(Math.random() * Math.floor(data.length));
+                let randomNumber3 =  Math.floor(Math.random() * Math.floor(data.length));
+
+                if (numNames === "1") {
+                    alert(`Welcome baby ${data[randomNumber1].name} ${lastName} `);
+                    console.log("data", data);
+                }
+
+                if (numNames === "2") {
+                    alert(`Welcome baby ${data[randomNumber1].name} ${data[randomNumber2].name} ${lastName} `);
+                    console.log("data", data);
+                }
+
+                if (numNames === "3") {
+                    alert(`Welcome baby ${data[randomNumber1].name} ${data[randomNumber2].name} ${data[randomNumber3].name}   ${lastName} `);
+                    console.log("data", data);
+                }
             });
         }
     });
@@ -155,7 +207,7 @@ $(function () {
                 // $(".display-origin-data").removeClass("hidden")
                 $('#lastnamep').text(`${opt2FirstName} is a ${country} name`)
                 console.log(relatedNames.names[0]);
-                console.log("typeofvariable",typeof opt2NumNames)
+                console.log("typeofvariable", typeof opt2NumNames)
                 console.log(opt2LastName);
                 if (opt2NumNames === "1") {
                     $('#congratsp').text(`Welcome baby ${relatedNames.names[0]} ${opt2LastName} `);
