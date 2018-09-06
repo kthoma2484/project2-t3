@@ -433,24 +433,32 @@ $(function () {
 
 
     //SEARCH BY FILTER OPTION3
-    $("#opt3-search").on("click", function () {
+    $("#opt3-btn").on("click", function () {
         let gender = $("#inputGroupSelect05").val();
         let year = $("#inputGroupSelect08").val();
         console.log("Gender:", gender, "Year", year);
+       
+        function displayResult() {
+            console.log("displayResult function works");
+            $("form").addClass("hidden");
+            $("#result-div").removeClass("hidden");
+    
+        }
+       
         if (gender == 3) { //either
             $.get(`/api/year/${year}`);
-            // console.log(data);
-            alert("Data: " + data + "\nStatus: " + status);
+            console.log(year);
+            //alert("Data: " + data + "\nStatus: " + status);
             // }); 
         } else if (gender == 2) { //boy
             $.get(`/api/year/${year}/m`).then(function (data) {
                 console.log(data);
-                alert("Data: " + data + "\nStatus: " + status);
+                //alert("Data: " + data + "\nStatus: " + status);
             });
         } else if (gender == 1) { //girl
             $.get(`/api/year/${year}/f`).then(function (data) {
                 console.log(data);
-                alert("Data: " + data + "\nStatus: " + status);
+                //alert("Data: " + data + "\nStatus: " + status);
             });
         }
     });
