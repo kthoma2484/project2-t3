@@ -440,6 +440,7 @@ label {
   .form-group {
     height: 30px;
   }
+
   .form-control {
     font-size: 14px;
   }
@@ -452,7 +453,7 @@ label {
     padding: 2px;
     font-size: 14;
   }
-  
+
   #opt1-btn,
   #opt2-btn,
   #opt3-btn {
@@ -541,6 +542,7 @@ label {
   .form-group {
     height: 30px;
   }
+
   .form-control {
     font-size: 12px;
   }
@@ -627,8 +629,6 @@ label {
   .form-row {
     height: 70px;
   }
-
-
 }
 
 /*---photobubbles code starts--------------*/
