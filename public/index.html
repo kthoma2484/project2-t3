@@ -62,7 +62,7 @@
                                 <br>
 
                                 <ul>
-                                    <li>First, select the how many names you wish the full name to include - e.g. a
+                                    <li>First, select how many names you wish the full name to include - e.g. a
                                         first, one middle, and/or two middle names.</li>
 
                                     <div class="input-group-prepend">
@@ -126,8 +126,8 @@
                         </div>
 
                         <div class="opt2-questions hidden">
-                            <p class="instructions">
-                                <em>Instructions for 'Inspired by origin search':</em>
+                            <div class="instructions">
+                                <h2><em>Instructions for 'Inspired by origin search':</em></h2>
                                 <ul>
                                     <li>First, type the name last for which you wish to find the origin.</li>
 
@@ -172,7 +172,7 @@
 
 
                                 </ul>
-                            </p>
+                            </div>
                         </div>
 
                     </div>
@@ -193,7 +193,7 @@
 
                             <div class="input-group-append">
 
-                                <p class="instructions">
+                                <div class="instructions">
                                     <em>Instructions for 'common U.S. names search':</em>
                                     <ul>
                                         <li>First, select the gender of the name you wish to search for. If gender is
@@ -235,7 +235,7 @@
 
                                         <button class="btn" id="opt3-btn" type="button">Search</button>
                                     </ul>
-                                </p>
+                                </div>
 
                             </div>
                         </div>
@@ -281,8 +281,29 @@
 
 
     <!--Kim Script Start-->
+   
     <script id="lettersTemplate" type="text/x-handlebars-template">
         <select class="form-control" id="name1"> 
+            <option selected>Please pick a letter.</option>
+            {{#each this}}
+            <option class="dropdown-item" value={{this}}>
+                {{this}}
+            </option>
+            {{/each}}
+        </select>  
+    </script>
+    <script id="lettersTemplate2" type="text/x-handlebars-template">
+        <select class="form-control" id="name2"> 
+            <option selected>Please pick a letter.</option>
+            {{#each this}}
+            <option class="dropdown-item" value={{this}}>
+                {{this}}
+            </option>
+            {{/each}}
+        </select>  
+    </script>
+    <script id="lettersTemplate3" type="text/x-handlebars-template">
+        <select class="form-control" id="name3"> 
             <option selected>Please pick a letter.</option>
             {{#each this}}
             <option class="dropdown-item" value={{this}}>
