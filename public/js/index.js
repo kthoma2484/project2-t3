@@ -33,19 +33,15 @@ var API = {
 
 
 // refreshExamples gets new examples from the db and repopulates the list
-<<<<<<< HEAD
+
 var refreshNames = function() {
   API.getNames().then(function(data) {
     var $examples = data.map(function(example) {
-=======
+
 var refreshExamples = function () {
   API.getExamples().then(function (data) {
     var $examples = data.map(function (example) {
-<<<<<<< HEAD
->>>>>>> master
-=======
-
->>>>>>> 5ca624a607fe7821d7cd91750c2147f99ea767f2
+      //  5ca624a607fe7821d7cd91750c2147f99ea767f2
       var $a = $("<a>")
         .text(example.text)
         .attr("href", "/example/" + example.id);
@@ -109,5 +105,7 @@ var handleDeleteBtnClick = function () {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
-
+    });
+  });
+};
 
