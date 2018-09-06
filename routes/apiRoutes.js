@@ -11,7 +11,12 @@ module.exports = function (app) {
       res.send(dbName);
     });
   });
+<<<<<<< HEAD
   app.get("/api/gender/m", function(req, res) { //MALE
+=======
+
+  app.get("/api/wild/:letter/:gender", function(req, res) {  
+>>>>>>> 2825e37778c639336fa73c08ff7fac59d0548b5f
     db.Names.findAll({
       where : {
         gender: "M"}
@@ -26,9 +31,14 @@ module.exports = function (app) {
   });
   //END OPTION1
 
+<<<<<<< HEAD
   //OPTION3
   //FILTER BY YEAR AND SORT BY POPULARITY
   app.get("/api/year/:year", function (req, res) {
+=======
+  //FILTER BY FIRST LETTER
+  app.get("/api/firstLetter/:letter", function (req, res) {
+>>>>>>> 2825e37778c639336fa73c08ff7fac59d0548b5f
     db.Names.findAll({
       where: { 
         year: {
@@ -114,4 +124,9 @@ module.exports = function (app) {
   //     res.render("results", {dbName});
   //   });
   // });
+<<<<<<< HEAD
 };
+=======
+  });
+};
+>>>>>>> 2825e37778c639336fa73c08ff7fac59d0548b5f

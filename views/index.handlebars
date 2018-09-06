@@ -1,100 +1,211 @@
-<div class="container main-pg">
+  
+            <div class="display-origin-data">
+                <p id="lastnamep"></p>
+                <p id="congratsp"></p>
+            </div>
+            <div class="row intro">
+                <h1>Welcome to Da-Ta-Baby - the baby name finder!</h1>
 
-  <div class="row logo">
-    <p>Logo</p>
-  </div>
-  <br>
+                <p> Just pick an option for how you would like to search for a baby name. Each option allows you to
+                    filter your search based on the type of search you select. The random name is a luck of the draw
+                    search. The search by origin will request a last name from you, search that last name, and find
+                    suggest first and/or middle names that have the same country origin. And finally, the search by
+                    common U.S. names will suggest names based on popular names recorded in U.S. records since 1880! We
+                    hope you enjoy our application selections! Get ready to find your baby's perfect name!
+                </p>
 
-  <div class="row intro">
-    <p>Introduction summary....</p>
-  </div>
-  <br>
+                <h2 style="text-decoration: underline;">Select one of the search items to begin!</h2>
+            </div>
 
-  <div class="form-group row search-opts form-check">
-    <div class="col-sm-12 opt1">
-      <input class="form-check-input" type="radio" name="exampleRadios" id="opt1Radios" value="option1">
-      <label class="form-check-label" for="Radios1">
-        <h3>Option 1 - Random Names</h3>
-      </label>
-      <br>
+            <form>
+                <div class="form-group row search-opts form-check opt1">
+                    <div class="col-sm-12">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="opt1Radios" value="option1">
+                        <label class="form-check-label" for="Radios1">
+                            <h3>Option 1 - Random Names</h3>
+                        </label>
+                        <br>
 
-      <div class="opt1-questions hidden">
-        <p>Instructions Opt1</p>
+                        <div class="opt1-questions hidden">
+                            <p>Instructions Opt1</p>
 
-        <div class="input-group-prepend">
-          <select class="custom-select" id="inputGroupSelect01">
-            <option selected>Now many names would you like?</option>
-            <option id="inputGrpSel1" value="1">First Name Only</option>
-            <option id="inputGrpSel2" value="2">First Name and Middle Name</option>
-            <option id="inputGrpSel3" value="3">First Name Only and two Middle Names</option>
-          </select>
+                            <div class="input-group-prepend">
+                                <select class="form-control" id="inputGroupSelect01">
+                                    <option selected>Now many names would you like?</option>
+                                    <option id="inputGrp1Sel1" value="1">First Name Only</option>
+                                    <option id="inputGrp1Sel2" value="2">First Name and Middle Name</option>
+                                    <option id="inputGrp1Sel3" value="3">First Name and two Middle Names</option>
+                                </select>
+                            </div>
+                            <br>
+
+                            <div class="first-letter hidden" id="starts-with">
+
+                            </div>
+                            <br>
+
+                            <div class="input-group-prepend">
+                                <select class="form-control" id="inputGroupSelect02">
+                                    <option selected>What gender name?</option>
+                                    <option value="1">Girl Name</option>
+                                    <option value="2">Boy Name</option>
+                                    <option value="3">Either</option>
+                                </select>
+                            </div>
+                            <br>
+
+                            <div class="form-group">
+                                <label for="last-name">Enter Your Last Name:</label>
+                                <input type="text" class="form-control" id="last-name" placeholder="Your Last Name Here">
+                            </div>
+
+                            <div class="input-group-append">
+                                <button class="btn" id="opt1-btn" type="button">Button</button>
+                            </div>
+                            <br>
+
+                        </div>
+
+
+                        <div class="input-group-append">
+
+                            <button class="btn" id="opt1-search" type="button">Search!</button>
+
+                    </div>
+                </div>
+
+                <br>
+                <div class="form-group row search-opts form-check opt2">
+
+                    <div class="col-sm-12">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="opt2Radios" value="option2">
+                        <label class="form-check-label" for="Radios2">
+                            <h3>Option 2 - Inspired by Origin</h3>
+                        </label>
+                        <br>
+
+                        <div class="opt2-questions hidden">
+                            <p>Instructions Opt2 - Enter the last name for which you wish to find the origin.</p>
+                            <div class="form-group">
+                                <label for="origin-last-name">Enter last name to search origin:</label>
+                                <input type="text" class="form-control" id="origin-last-name" placeholder="Last Name Here">
+                            </div>
+
+                            <div class="input-group-prepend">
+                                <select class="form-control" id="inputGroupSelect03">
+                                    <option selected>What gender for name search?</option>
+                                    <option value="1">Girl Name</option>
+                                    <option value="2">Boy Name</option>
+                                    <option value="3">Either</option>
+                                </select>
+                            </div>
+                            <br>
+
+                            <div class="input-group-prepend">
+                                <select class="form-control" id="inputGroupSelect04">
+                                    <option selected>Now many names would you like?</option>
+                                    <option id="inputGrp2Sel1" value="1">First Name Only</option>
+                                    <option id="inputGrp2Sel2" value="2">First Name and Middle Name</option>
+                                    <option id="inputGrp2Sel3" value="3">First Name and two Middle Names</option>
+                                </select>
+                            </div>
+                            <br>
+
+                            <div class="origin-first-letter hidden" id="origin-starts-with"></div>
+                            <br>
+
+                            <div class="input-group-append">
+                                <button class="btn" id="opt2-btn" type="button">Button</button>
+                            </div>
+                            <br>
+                        </div>
+
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="form-group row search-opts form-check opt3">
+                    <div class="col-sm-12">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="opt3Radios" value="option3">
+                        <label class="form-check-label" for="Radios3"></label>
+
+                        <h3>Option 3 - Filter by names:</h3>
+
+                    </div>
+                    <br>
+
+                    <div class="opt3-questions hidden">
+                        <p>Instructions Opt3</p>
+                        <div class="input-group-append">
+                            <div class="input-group-prepend">
+                                <select class="form-control" id="inputGroupSelect05">
+                                    <option selected>What gender for name search?</option>
+                                    <option value="1">Girl Name</option>
+                                    <option value="2">Boy Name</option>
+                                    <option value="3">Either</option>
+                                </select>
+                            </div>
+                            <br>
+
+                            <select class="form-control" id="inputGroupSelect04">
+                                <option selected>Search by decade (from 1880)?</option>
+                                <option id="inputGrp3Sel1" value="1">1880-1889</option>
+                                <option id="inputGrp3Sel2" value="2">1890-1899</option>
+                                <option id="inputGrp3Sel3" value="3">1900-1909</option>
+                                <option id="inputGrp3Sel4" value="3">1910-1919</option>
+                                <option id="inputGrp3Sel5" value="3">1920-1929</option>
+                                <option id="inputGrp3Sel6" value="3">1930-1939</option>
+                                <option id="inputGrp3Sel7" value="3">1940-1949</option>
+                                <option id="inputGrp3Sel8" value="3">1950-1959</option>
+                                <option id="inputGrp3Sel9" value="3">1960-1969</option>
+                                <option id="inputGrp3Sel10" value="3">1970-1979</option>
+                                <option id="inputGrp3Sel11" value="3">1980-1989</option>
+                                <option id="inputGrp3Sel12" value="3">1990-1999</option>
+                                <option id="inputGrp3Sel13" value="3">2000-2009</option>
+                                <option id="inputGrp3Sel14" value="3">2010-2014</option>
+
+                            </select>
+
+                            <button class="btn" id="opt3-btn" type="button">Button</button>
+
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="reset" type="button" value="Reload Page">Reset</button>
+
+            </form>
         </div>
-        <br>
 
-        <div class="first-letter hidden" id="starts-with">
+        <div class="container hidden" id="result-div"></div>
 
+
+        <div class="stage">
+            <figure class="ball bubble" id="pic1"><span class="shadow"></span></figure>
         </div>
-        <br>
-
-        <div class="input-group-prepend">
-          <select class="custom-select" id="inputGroupSelect02">
-            <option selected>Which gender?</option>
-            <option value="1">Girl</option>
-            <option value="2">Boy</option>
-            <option value="3">Either</option>
-          </select>
+        <div class="stage">
+            <figure class="ball2 bubble" id="pic2"><span class="shadow"></span></figure>
         </div>
-        <br>
-
-        <div class="input-group-append">
-          <button class="btn opt1-search" type="button">Generate Name</button>
+        <div class="stage">
+            <figure class="ball3 bubble" id="pic3"><span class="shadow"></span></figure>
         </div>
-        <br>
-      </div>
-    </div>
-    <br>
-
-    <div class="col-sm-12 opt2">
-      <input class="form-check-input" type="radio" name="exampleRadios" id="opt2Radios" value="option2">
-      <label class="form-check-label" for="Radios2">
-        <h3>Option 2 - Inspired by Origin</h3>
-      </label>
-      <br>
-      <div class="opt2-questions hidden">
-        <p>Instructions Opt2</p>
-        <div class="input-group-append">
-
-          <button class="btn" type="button">Button</button>
+        <div class="stage">
+            <figure class="ball4 bubble" id="pic4"><span class="shadow"></span></figure>
         </div>
-        <br>
-      </div>
-    </div>
-    <br>
-
-    <div class="col-sm-12 opt3">
-      <input class="form-check-input" type="radio" name="exampleRadios" id="opt3Radios" value="option3">
-      <label class="form-check-label" for="Radios3">
-        <h3>Option 3 - Most Popular US Names</h3>
-      </label>
-      <br>
-      <div class="opt3-questions hidden">
-        <p>Instructions Opt3</p>
-        <div class="input-group-append">
-
-          <button class="btn" type="button">Button</button>
+        <div class="stage">
+            <figure class="ball5 bubble" id="pic5"><span class="shadow"></span></figure>
         </div>
-        <br>
-      </div>
-    </div>
-  </div>
+        <div class="stage">
+            <figure class="ball6 bubble" id="pic6"><span class="shadow"></span></figure>
+        </div>
 
 </div>
 
-
-<!--Kim Script Start-->
-<script id="lettersTemplate" type="text/x-handlebars-template">
-        <select id="name1"> 
-            <option selected>First letter of first name starts with?</option>
+    <script id="lettersTemplate" type="text/x-handlebars-template">
+        <select class="form-control" id="name1"> 
+            <option selected>Please pick a letter.</option>
             {{#each this}}
             <option class="dropdown-item" value={{this}}>
                 {{this}}
@@ -102,5 +213,21 @@
             {{/each}}
         </select>  
     </script>
-<!--Kim Script End-->
+    <script id="originTemplate" type="text/x-handlebars-template">
+        <select class="form-control" id="origin-name1"> 
+            <option selected>Please pick a letter.</option>
+            {{#each this}}
+            <option class="dropdown-item" value={{this}}>
+                {{this}}
+            </option>
+            {{/each}}
+        </select>  
+    </script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="/public/js/handlebars-v4.0.11.js"></script>
+    <script src="/public/js/main.js"></script>
