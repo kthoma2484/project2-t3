@@ -49,7 +49,7 @@ $(function () {
     });
 
     // Use function using handlebars to populate alphabet in dropdown menu
-    console.log(letters);
+    //console.log(letters);
 
     let lettersData = {};
     let compiledProject = '';
@@ -435,9 +435,10 @@ $(function () {
     //SEARCH BY FILTER OPTION3
     $("#opt3-btn").on("click", function () {
         let gender = $("#inputGroupSelect05").val();
-        let year = $("#inputGroupSelect08").val();
-        console.log("Gender:", gender, "Year", year);
-       
+        let year = $("#inputGroupSelect04 option:selected").val();
+        console.log("Gender:", gender);
+        console.log("Year:", year)
+
         function displayResult() {
             console.log("displayResult function works");
             $("form").addClass("hidden");
@@ -446,10 +447,10 @@ $(function () {
         }
        
         if (gender == 3) { //either
-            $.get(`/api/year/${year}`);
-            console.log(year);
+            $.get(`/api/year/${year}`).then(function (data) {
+            console.log(data);
             //alert("Data: " + data + "\nStatus: " + status);
-            // }); 
+            }); 
         } else if (gender == 2) { //boy
             $.get(`/api/year/${year}/m`).then(function (data) {
                 console.log(data);
