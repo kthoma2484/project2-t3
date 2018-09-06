@@ -159,7 +159,7 @@ $(function () {
             let ajax1 = false;
             let ajax2 = false;
             let ajax3 = false;
-            
+
             // (Kim) Input validation for search
             if (firstLetter == 'Please pick a letter.' || middleLetter1 == 'Please pick a letter.' || middleLetter2 == 'Please pick a letter.') {
                 alert('Please choose a letter for all fields.');
@@ -176,13 +176,18 @@ $(function () {
             }
 
             let displayFullName = function () {
-                 //Assign variable to combine all names in fullNameArray plus last name
-                 fullName = fullNameArray.join(' ') + ' ' + lastName;
-                 console.log('this is fullName: ' + fullName)
- 
-                 //Add new element that displays the full random name
-                 displayResult();
-                 $("#result-div").append(`<h1> Your baby's random name is...</h1><p id="result-deco"> ${fullName} </p>`)
+                //Assign variable to combine all names in fullNameArray plus last name
+                fullName = fullNameArray.join(' ') + ' ' + lastName;
+                console.log('this is fullName: ' + fullName)
+
+                //Add new element that displays the full random name
+                displayResult();
+
+                if (fullNameArray.length) {
+                    $("#result-div").append(`<h1> Your baby's random name is...</h1><p id="result-deco"> ${fullName} </p>`)
+                } else {
+                    $("#result-div").append(`<h1> Oh No! There were no names found for your search! Please try again.</h1>`)
+                }
             }
 
             // (Craig/Kim) Do an api request depending on gender selection
@@ -190,30 +195,35 @@ $(function () {
                 console.log('gender search for female')
 
                 $.get(`/api/wild/${firstLetter}/f`).then(function (data) {
-                    console.log(data);
 
-                    //Random selection of single array object from database search filter
-                    ranName = data[Math.floor(Math.random() * data.length)];
-                    //console.log("random object is " + ranName);
+                    if (data.length) {
+                        console.log(data);
 
-                    //Assign variable to single randomly selected name
-                    randomFirstName = ranName.name;
-                    console.log('first name is ' + randomFirstName);
+                        //Random selection of single array object from database search filter
+                        ranName = data[Math.floor(Math.random() * data.length)];
+                        //console.log("random object is " + ranName);
 
-                    //Push name to names array
-                    fullNameArray.push(randomFirstName)
+                        //Assign variable to single randomly selected name
+                        randomFirstName = ranName.name;
+                        console.log('first name is ' + randomFirstName);
 
+                        //Push name to names array
+                        fullNameArray.push(randomFirstName)
+                    }
                     ajax1 = true;
+
                 });
 
                 if (typeof middleLetter1 == 'string' && middleLetter1.match('^[a-zA-Z]$')) {
 
                     $.get(`/api/wild/${middleLetter1}/f`).then(function (data) {
-                        //console.log(data);
-                        ranName = data[Math.floor(Math.random() * data.length)];
-                        randomMiddleName = ranName.name;
-                        console.log('middle name 1 is ' + randomMiddleName);
-                        fullNameArray.push(randomMiddleName)
+                        if (data.length) {
+                            //console.log(data);
+                            ranName = data[Math.floor(Math.random() * data.length)];
+                            randomMiddleName = ranName.name;
+                            console.log('middle name 1 is ' + randomMiddleName);
+                            fullNameArray.push(randomMiddleName)
+                        }
                         ajax2 = true;
                     });
                 } else {
@@ -222,97 +232,166 @@ $(function () {
 
                 if (typeof middleLetter2 == 'string' && middleLetter2.match('^[a-zA-Z]$')) {
                     $.get(`/api/wild/${middleLetter2}/f`).then(function (data) {
-                        //console.log(data);
-                        ranName = data[Math.floor(Math.random() * data.length)];
-                        randomMiddleName2 = ranName.name;
-                        console.log('middle name 2 is ' + randomMiddleName2);
-                        fullNameArray.push(randomMiddleName2)
+
+                        if (data.length) {
+                            //console.log(data);
+                            ranName = data[Math.floor(Math.random() * data.length)];
+                            randomMiddleName2 = ranName.name;
+                            console.log('middle name 2 is ' + randomMiddleName2);
+                            fullNameArray.push(randomMiddleName2);
+                        }
                         ajax3 = true;
                     });
-                    
+
                 } else {
                     ajax3 = true;
                 }
 
-               
+
 
             } else if (gender == 2) { //boy
 
                 console.log('gender search for male')
 
                 $.get(`/api/wild/${firstLetter}/m`).then(function (data) {
-                    //console.log(data[0].name);
-                    ranName = data[Math.floor(Math.random() * data.length)];
-                    randomFirstName = ranName.name;
-                    console.log('middle name is ' + randomFirstName);
-                    fullNameArray.push(randomFirstName)
+
+                    if (data.length) {
+                        console.log(data);
+                        ranName = data[Math.floor(Math.random() * data.length)];
+                        randomFirstName = ranName.name;
+                        console.log('first name is ' + randomFirstName);
+                        fullNameArray.push(randomFirstName);
+                    }
+
+                    ajax1 = true;
                 });
+
+                if (typeof middleLetter1 == 'string' && middleLetter1.match('^[a-zA-Z]$')) {
+
+                    $.get(`/api/wild/${middleLetter1}/m`).then(function (data) {
+
+                        if (data.length) {
+                            console.log(data);
+                            ranName = data[Math.floor(Math.random() * data.length)];
+                            randomMiddleName = ranName.name;
+                            console.log('middle name 1 is ' + randomMiddleName);
+                            fullNameArray.push(randomMiddleName);
+                        }
+                        ajax2 = true;
+                    });
+                } else {
+                    ajax2 = true;
+                }
+
+                if (typeof middleLetter2 == 'string' && middleLetter2.match('^[a-zA-Z]$')) {
+                    $.get(`/api/wild/${middleLetter2}/m`).then(function (data) {
+
+                        if (data.length) {
+                            //console.log(data);
+                            ranName = data[Math.floor(Math.random() * data.length)];
+                            randomMiddleName2 = ranName.name;
+                            console.log('middle name 2 is ' + randomMiddleName2);
+                            fullNameArray.push(randomMiddleName2);
+                        }
+                        ajax3 = true;
+                    });
+
+                } else {
+                    ajax3 = true;
+                }
+
             } else { //all
                 console.log("gender search for either")
 
                 $.get(`/api/wild/${firstLetter}/`).then(function (data) {
-                    //console.log(JSON.stringify(data))
 
-                    ranName = data[Math.floor(Math.random() * data.length)];
-                    randomFirstName = ranName.name;
-                    console.log('second middle name is ' + randomFirstName);
+                    if (data.length) {
+                        //console.log(data);
+                        ranName = data[Math.floor(Math.random() * data.length)];
+                        randomFirstName = ranName.name;
+                        console.log('first name is ' + randomFirstName);
+                        fullNameArray.push(randomFirstName);
+                    }
+                    ajax1 = true;
+                });
 
-                    fullNameArray.push(randomFirstName)
-                })
+                if (typeof middleLetter1 == 'string' && middleLetter1.match('^[a-zA-Z]$')) {
 
+                    $.get(`/api/wild/${middleLetter1}/`).then(function (data) {
 
+                        if (data.length) {
+                            //console.log(data);
+                            ranName = data[Math.floor(Math.random() * data.length)];
+                            randomMiddleName = ranName.name;
+                            console.log('middle name 1 is ' + randomMiddleName);
+                            fullNameArray.push(randomMiddleName)
+                        }
+                        ajax2 = true;
+                    });
+                } else {
+                    ajax2 = true;
+                }
+
+                if (typeof middleLetter2 == 'string' && middleLetter2.match('^[a-zA-Z]$')) {
+                    $.get(`/api/wild/${middleLetter2}/`).then(function (data) {
+
+                        if (data.length) {
+                            //console.log(data);
+                            ranName = data[Math.floor(Math.random() * data.length)];
+                            randomMiddleName2 = ranName.name;
+                            console.log('middle name 2 is ' + randomMiddleName2);
+                            fullNameArray.push(randomMiddleName2);
+                        }
+                        ajax3 = true;
+                    });
+
+                } else {
+                    ajax3 = true;
+                }
 
             };
 
-            let stopThis = setTimeout(function() {
+            // Add a delay to allow ajax response to load before displaying final search name
+            let stopThis = setTimeout(function () {
                 if (ajax1 && ajax2 && ajax3) {
                     displayFullName();
                     clearTimeout(stopThis);
                 }
-            }, 500);     
+            }, 500);
 
-            
+
         });
 
     });
-    // If Origin name search is selected...
-    $("#inputGroupSelect04").change(function () {
-
-        // Shows search options for random name search
-        console.log("option 2 selector 1 was selected");
-        $("#origin-starts-with").removeClass("hidden");
-        $("#origin-starts-with").html("");
-
-        // Appends appropriate text for first letter search
-        if ($(this).val() === "1") {
-            console.log("first letter text added");
-            $(".origin-first-letter").append("<p> Enter the letter you wish the first name to begin with: <p>");
-        } else if ($(this).val() === "2") {
-            console.log("first letter text added");
-            $(".origin-first-letter").append("<p> Enter the letters you wish the first name and the middle name to begin with: <p>");
-        } else if ($(this).val() === "3") {
-            console.log("first letter text added");
-            $(".origin-first-letter").append("<p> Enter the letters you wish the first name, the middle name, and the second middle name to begin with: <p>");
-        }
-
-        // Loops through values of number of names wanted and renders alphabet dropdowns for each
-        for (let i = 0; i < this.value; i++) {
-            console.log(i);
-            renderLettersFour(letters);
-        }
 
 
 
 
+    // // If Origin name search is selected...
+    // $("#inputGroupSelect04").change(function () {
 
+    //     // Shows search options for random name search
+    //     console.log("option 2 selector 1 was selected");
+    //     $("#origin-starts-with").removeClass("hidden");
+    //     $("#origin-starts-with").html("");
 
+    //     // Appends appropriate text for first letter search
+    //     if ($(this).val() === "1") {
+    //         console.log("first letter text added");
+    //         $(".origin-first-letter").append("<p> Enter the letter you wish the first name to begin with: <p>");
+    //     } else if ($(this).val() === "2") {
+    //         console.log("first letter text added");
+    //         $(".origin-first-letter").append("<p> Enter the letters you wish the first name and the middle name to begin with: <p>");
+    //     } else if ($(this).val() === "3") {
+    //         console.log("first letter text added");
+    //         $(".origin-first-letter").append("<p> Enter the letters you wish the first name, the middle name, and the second middle name to begin with: <p>");
+    //     }
 
-
-
-    });
-
-
-    // })
+    //     // Loops through values of number of names wanted and renders alphabet dropdowns for each
+    //     for (let i = 0; i < this.value; i++) {
+    //         console.log(i);
+    //         renderLettersFour(letters);
+    //     }
 
     //   $("#opt2-btn").on('click', function () {
     //     let opt2NumNames = $('#numNames').val();
@@ -349,195 +428,32 @@ $(function () {
     //     });
     //   });
 
-
-
-    //   //SEARCH BY FILTER OPTION3
-    //   $("#opt3-search").on("click", function () {
-    //     let gender = $("#inputGroupSelect05").val();
-    //     let year = $("#inputGroupSelect08").val();
-    //     console.log("Gender:", gender, "Year", year);
-    //     if (gender == 3) { //either
-    //       $.get(`/api/year/${year}`);
-    //       // console.log(data);
-    //       alert("Data: " + data + "\nStatus: " + status);
-    //       // }); 
-    //     } else if (gender == 2) { //boy
-    //       $.get(`/api/year/${year}/m`).then(function (data) {
-    //         console.log(data);
-    //         alert("Data: " + data + "\nStatus: " + status);
-    //       });
-    //     } else if (gender == 1) { //girl
-    //       $.get(`/api/year/${year}/f`).then(function (data) {
-    //         console.log(data);
-    //         alert("Data: " + data + "\nStatus: " + status);
-    //       });
-    //     }
-    //   });
-    //   //-----------------------------------------------------------------
-    //   // If Random Name search is selected...
-    //   $("#inputGroupSelect04").change(function () {
-    //     // Shows search options for random name search
-    //     console.log("option 2 selector 1 was selected");
-    //     $("#origin-starts-with").removeClass("hidden");
-    //     $("#origin-starts-with").html("");
-    //     // Appends appropriate text for first letter search
-    //     if ($(this).val() === "1") {
-    //       console.log("first letter text added");
-    //       $(".origin-first-letter").append("<p> Enter the letter you wish the first name to begin with: <p>");
-    //     } else if ($(this).val() === "2") {
-    //       console.log("first letter text added");
-    //       $(".origin-first-letter").append("<p> Enter the letters you wish the first name and the middle name to begin with: <p>");
-    //     } else if ($(this).val() === "3") {
-    //       console.log("first letter text added");
-    //       $(".origin-first-letter").append("<p> Enter the letters you wish the first name, the middle name, and the second middle name to begin with: <p>");
-    //     }
-    //     // Loops through values of number of names wanted and renders alphabet dropdowns for each
-    //     for (let i = 0; i < this.value; i++) {
-    //       console.log(i);
-    //       renderLettersTwo(letters);
-    //     }
-    //   });
-    //   particlesJS.load("particles-js", "js/particles.json", function () {
-    //     console.log("callback - particles.js config loaded");
-    //   });
-    //   if (opt2Names == 1) {
-    //   }
+    // });
 
 
 
+    //SEARCH BY FILTER OPTION3
+    $("#opt3-search").on("click", function () {
+        let gender = $("#inputGroupSelect05").val();
+        let year = $("#inputGroupSelect08").val();
+        console.log("Gender:", gender, "Year", year);
+        if (gender == 3) { //either
+            $.get(`/api/year/${year}`);
+            // console.log(data);
+            alert("Data: " + data + "\nStatus: " + status);
+            // }); 
+        } else if (gender == 2) { //boy
+            $.get(`/api/year/${year}/m`).then(function (data) {
+                console.log(data);
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+        } else if (gender == 1) { //girl
+            $.get(`/api/year/${year}/f`).then(function (data) {
+                console.log(data);
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+        }
+    });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //   //--------------------------------craig's code-------------------------
-
-    //     //Craig utilities
-    //     $("#starts-with").on("change", function () {
-    //       console.log("Name1 Value:", $("#name1").val())
-    //     })
-    //     //RANDOM NAME GENERATOR OPTION 1
-    //     $('#opt1-btn').on('click', function () {
-    //       let numNames = $('#inputGroupSelect01').val();
-    //       console.log("numNames: ", numNames);
-    //       // let firstLetter = $('#name1').val();
-    //       // console.log("firstLetterVal:", firstLetter);
-    //       let gender = $('#inputGroupSelect02').val();
-    //       console.log("GenderVal:", gender);
-    //       let lastName = $('#last-name').val();
-    //       console.log("lastName:", lastName);
-    //       // Do an api request depending on conditions above
-    //       if (gender === "1") { //girl
-    //         $.get(`/api/gender/f`).then(function (data) {
-    //           let randomNumber1 = Math.floor(Math.random() * Math.floor(data.length));
-    //           let randomNumber2 = Math.floor(Math.random() * Math.floor(data.length));
-    //           let randomNumber3 = Math.floor(Math.random() * Math.floor(data.length));
-    //           if (numNames === "1") {
-    //             alert(`Welcome baby ${data[randomNumber1].name} ${lastName} `); //OPT1 RESULT
-    //             console.log("data", data);
-    //           }
-    //           if (numNames === "2") {
-    //             alert(`Welcome baby ${data[randomNumber1].name} ${data[randomNumber2].name} ${lastName} `); //OPT1 RESULT
-    //             console.log("data", data);
-    //           }
-    //           if (numNames === "3") {
-    //             alert(`Welcome baby ${data[randomNumber1].name} ${data[randomNumber2].name} ${data[randomNumber3].name}   ${lastName} `); //OPT1 RESULT
-    //             console.log("data", data);
-    //           }
-    //         });
-    //       } else if (gender === "2") { //boy
-    //         $.get(`/api/gender/m`).then(function (data) {
-    //           let randomNumber1 = Math.floor(Math.random() * Math.floor(data.length));
-    //           let randomNumber2 = Math.floor(Math.random() * Math.floor(data.length));
-    //           let randomNumber3 = Math.floor(Math.random() * Math.floor(data.length));
-    //           if (numNames === "1") {
-    //             alert(`Welcome baby ${data[randomNumber1].name} ${lastName} `); //OPT1 RESULT
-    //             console.log("data", data);
-    //           }
-    //           if (numNames === "2") {
-    //             alert(`Welcome baby ${data[randomNumber1].name} ${data[randomNumber2].name} ${lastName} `); //OPT1 RESULT
-    //             console.log("data", data);
-    //           }
-    //           if (numNames === "3") {
-    //             alert(`Welcome baby ${data[randomNumber1].name} ${data[randomNumber2].name} ${data[randomNumber3].name}   ${lastName} `); //OPT1 RESULT
-    //             console.log("data", data);
-    //           }
-    //         });
-    //       } else { //all
-    //         $.get(`/api/findall`).then(function (data) {
-    //           let randomNumber1 = Math.floor(Math.random() * Math.floor(data.length));
-    //           let randomNumber2 = Math.floor(Math.random() * Math.floor(data.length));
-    //           let randomNumber3 = Math.floor(Math.random() * Math.floor(data.length));
-    //           if (numNames === "1") {
-    //             alert(`Welcome baby ${data[randomNumber1].name} ${lastName} `); //OPT1 RESULT
-    //             console.log("data", data);
-    //           }
-    //           if (numNames === "2") {
-    //             alert(`Welcome baby ${data[randomNumber1].name} ${data[randomNumber2].name} ${lastName} `); //OPT1 RESULT
-    //             console.log("data", data);
-    //           }
-    //           if (numNames === "3") {
-    //             alert(`Welcome baby ${data[randomNumber1].name} ${data[randomNumber2].name} ${data[randomNumber3].name}   ${lastName} `); //OPT1 RESULT
-    //             console.log("data", data);
-    //           }
-    //         });
-    //       }
-    //     });
-    //     $("#opt2-btn").on('click', function () {
-    //       let opt2NumNames = $('#numNames').val();
-    //       let opt2FirstName = $('#origin-first-name').val();
-    //       let opt2LastName = $('#origin-last-name').val();
-    //       let opt2Gender = $('#inputGroupSelect03').val();
-    //       let opt2Sex = "";
-    //       if (opt2Gender === "1") opt2Sex = "f"
-    //       if (opt2Gender === "2") opt2Sex = "m"
-    //       let queryURL = `https://www.behindthename.com/api/lookup.json?name=${opt2FirstName}&key=cr909584168`;
-    //       $.get(queryURL).then(function (nameData) { //first query (getting origin info)
-    //         console.log(nameData); //info back about name    
-    //         let nameOrigin = nameData[0].usages[0].usage_code; //this gets the code of origin, ex sco for scottish
-    //         console.log("nameOrigin:", nameOrigin);
-    //         let country = nameData[0].usages[0].usage_full;
-    //         let queryURL2 = `https://www.behindthename.com/api/random.json?usage=${nameOrigin}&gender=${opt2Sex}&number=6&key=cr909584168`; //gets 6 names of same origin
-    //         $.get(queryURL2).then(function (relatedNames) { //new query using last names origin
-    //           console.log(relatedNames); //relatedNames is an array of 6 names;
-    //           // $(".display-origin-data").removeClass("hidden")
-    //           console.log(`${opt2FirstName} is a ${country} name`)
-    //           console.log(relatedNames.names[0]);
-    //           console.log("typeofvariable", typeof opt2NumNames)
-    //           console.log(opt2LastName);
-    //           if (opt2NumNames === "1") {
-    //             alert(`Welcome baby ${relatedNames.names[0]} ${opt2LastName} `); //OPT2 RESULT
-    //           }
-    //           if (opt2NumNames === "2") {
-    //             alert(`Welcome baby ${relatedNames.names[0]} ${relatedNames.names[1]} ${opt2LastName} `); //OPT2 RESULT
-    //           }
-    //           if (opt2NumNames === "3") {
-    //             alert(`Welcome baby ${relatedNames.names[0]} ${relatedNames.names[1]} ${relatedNames.names[2]} ${opt2LastName} `); //OPT2 RESULT
-    //           }
-    //         });
-    //       });
-    //     });
-
-    //     //-----------------------------------------------------------------
-
-})
+    
+});
