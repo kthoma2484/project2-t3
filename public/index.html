@@ -22,27 +22,14 @@
 
         <div class="animated tada" id="logo">
         </div>
-        <br>
 
         <div class="container">
             <!-- inserting origin data - ericka  -->
 
-            <div class="display-origin-data">
-                <p id="lastnamep"></p>
-                <p id="congratsp"></p>
-            </div>
             <div class="row intro">
-                <h1>Welcome to Da-Ta-Baby - the baby name finder!</h1>
-
-                <p> Just pick an option for how you would like to search for a baby name. Each option allows you to
-                    filter your search based on the type of search you select. The random name is a luck of the draw
-                    search. The search by origin will request a last name from you, search that last name, and find
-                    suggest first and/or middle names that have the same country origin. And finally, the search by
-                    common U.S. names will suggest names based on popular names recorded in U.S. records since 1880! We
-                    hope you enjoy our application selections! Get ready to find your baby's perfect name!
-                </p>
-
-                <h2 style="text-decoration: underline;">Select one of the search items to begin!</h2>
+                <p class="header1">Welcome to Da-Ta-Baby - the baby name finder!</p>
+                <p class="text1"> Just pick an option for how you would like to search for a baby name. Each option allows you to filter your search based on the type of search you select. The random name is a luck of the draw search. The search by origin will request a last name from you, search that last name, and find suggest first and/or middle names that have the same country origin. And finally, the search by common U.S. names will suggest names based on popular names recorded in U.S. records since 1880! We hope you enjoy our application selections! Get ready to find your baby's perfect name!</p>
+                <p class="header1" style="text-decoration: underline;">Select one of the search items to begin!</p>
             </div>
 
 
@@ -52,13 +39,13 @@
                         <div class="initial-opts">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="opt1Radios" value="option1">
                             <label class="form-check-label" for="Radios1">
-                                <h2>Option 1 - Random name search</h2>
+                                <p class="header1">Option 1 - Random name search</p>
                             </label>
                         </div>
 
                         <div class="opt1-questions hidden">
                             <div class="instructions">
-                                <h2><em>Instructions for 'random name search':</em></h2>
+                                <p class="header1"><em>Instructions for 'random name search':</em></p>
                                 <br>
 
                                 <ul>
@@ -121,23 +108,31 @@
                         <div class="initial-opts">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="opt2Radios" value="option2">
                             <label class="form-check-label" for="Radios2">
-                                <h2>Option 2 - Search names inspired by origin</h2>
+                                <p class="header1">Option 2 - Search names inspired by origin</p>
                             </label>
                         </div>
 
                         <div class="opt2-questions hidden">
                             <div class="instructions">
-                                <h2><em>Instructions for 'Inspired by origin search':</em></h2>
+                                <p class="header1"><em>Instructions for 'Inspired by origin search':</em></p>
+                                <br>
                                 <ul>
                                     <li>First, type the name last for which you wish to find the origin.</li>
-
+                                    <br>
                                     <div class="form-group form-inline">
+                                        <div>
                                         <label for="origin-first-name">Enter first name to search origin:</label>
                                         <input type="text" class="form-control" id="origin-first-name" placeholder="First Name Here">
-                                        <!-- added first name form  -->
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group form-inline">
+                                        <div>
                                         <label for="origin-last-name">Enter last name to search origin:</label>
                                         <input type="text" class="form-control" id="origin-last-name" placeholder="Last Name Here">
+                                        </div>
                                     </div>
+                                    <br>
 
                                     <li>Next, select the gender of the name you wish to search for. If gender is
                                         irrelevant, select 'either'.</li>
@@ -150,6 +145,7 @@
                                             <option value="3">Either</option>
                                         </select>
                                     </div>
+                                    <br>
 
                                     <li>Then, select the how many names you wish the full name to include - e.g. a
                                         first, one middle, and/or two middle names. You will need to enter the letter
@@ -164,10 +160,12 @@
                                     </div>
 
                                     <div class="origin-first-letter hidden" id="origin-starts-with"></div>
+                                    <br>
 
                                     <li>Finally, press the 'search' button to begin your search!</li>
+                                    <br>
                                     <div class="input-group-append">
-                                        <button class="btn" id="opt2-search" type="button">Search</button>
+                                        <button class="btn" id="opt2-btn" type="button">Search</button>
                                     </div>
 
 
@@ -184,7 +182,7 @@
                         <div class="initial-opts">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="opt3Radios" value="option3">
                             <label class="form-check-label" for="Radios3">
-                                <h2>Option 3 - Filter by common U.S. names</h2>
+                                <p class="header1">Option 3 - Filter by common U.S. names</p>
                             </label>
                         </div>
 
@@ -194,10 +192,11 @@
                             <div class="input-group-append">
 
                                 <div class="instructions">
-                                    <em>Instructions for 'common U.S. names search':</em>
+                                    <p class="header1"><em>Instructions for 'common U.S. names search':</em></p>
+                                    <br>
+                                    
                                     <ul>
-                                        <li>First, select the gender of the name you wish to search for. If gender is
-                                            irrelevant, select 'either'.</li>
+                                        <li>First, select the gender of the name you wish to search for. If gender is irrelevant, select 'either'.</li>
 
 
                                         <div class="input-group-prepend">
@@ -208,12 +207,11 @@
                                                 <option value="3">Either</option>
                                             </select>
                                         </div>
+                                        <br>
 
-                                        <li>Then, select the decade you want to search for name popularity during that
-                                            time
-                                            period.</li>
+                                        <li>Then, select the decade you want to search for name popularity during that time period.</li>
 
-                                        <select class="form-control" id="inputGroupSelect04">
+                                        <select class="form-control decade" id="inputGroupSelect04">
                                             <option selected>Search by decade (from 1880)?</option>
                                             <option id="inputGrp3Sel1" value="1">1880-1889</option>
                                             <option id="inputGrp3Sel2" value="2">1890-1899</option>
@@ -230,9 +228,10 @@
                                             <option id="inputGrp3Sel13" value="3">2000-2009</option>
                                             <option id="inputGrp3Sel14" value="3">2010-2014</option>
                                         </select>
+                                        <br>
 
                                         <li>Finally, press the 'search' button to begin your search!</li>
-
+                                        <br>
                                         <button class="btn" id="opt3-btn" type="button">Search</button>
                                     </ul>
                                 </div>
