@@ -1205,4 +1205,70 @@ label {
   float: center;
 }
 
+#namesTable {
+  border-radius: 15px 50px 30px;
+  background: rgb(255, 151, 82);
+  padding: 20px; 
+  width: 200px;
+  height: 150px; 
+}
+#namesTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#namesTable td, #namesTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#namesTable tr:nth-child(even){background-color: #f2f2f2;}
+#namesTable tr:hover {background-color: #ddd;}
+#namesTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: rgb(255, 135, 80);
+  color: white;
+}
+#namesTable {
+  
+  border-radius: 12px;
+}
+#namesTable {
+  box-shadow: 10px 10px 5px grey;
+
+}
+#namesGrid {
+  border-radius: 15px 50px 30px;
+  background: rgb(255, 151, 82);
+  padding: 20px; 
+  width: 200px;
+  height: 150px; 
+}
+#namesGrid {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#namesGrid td, #namesTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#namesGrid tr:nth-child(even){background-color: #f2f2f2;}
+#namesGrid tr:hover {background-color: #ddd;}
+#namesGrid th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(255, 135, 80);
+  color: white;
+}
+#namesGrid {
+  
+  border-radius: 12px;
+}
+#namesGrid {
+  box-shadow: 10px 10px 5px grey;
+}
+
 /*---photo bubbles code ends------------------------------*/
