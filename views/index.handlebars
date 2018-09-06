@@ -103,7 +103,7 @@
 
                             <div class="input-group-prepend">
                                 <select class="form-control" id="inputGroupSelect04">
-                                    <option selected>Now many names would you like?</option>
+                                    <option selected>How many names would you like?</option>
                                     <option id="inputGrp2Sel1" value="1">First Name Only</option>
                                     <option id="inputGrp2Sel2" value="2">First Name and Middle Name</option>
                                     <option id="inputGrp2Sel3" value="3">First Name and two Middle Names</option>
@@ -174,9 +174,14 @@
                     </div>
                 </div>
 
-                <button id="reset" type="button" value="Reload Page">Reset</button>
-
             </form>
+
+            <div class="hidden" id="result-div" style="justify-content: center;"></div>
+
+            <div class="row align-self-end" style="margin: 5px">
+                <button class="btn" id="reset" type="button">Reset</button>
+            </div>
+
         </div>
 
         <div class="container hidden" id="result-div"></div>
@@ -205,6 +210,26 @@
 
     <script id="lettersTemplate" type="text/x-handlebars-template">
         <select class="form-control" id="name1"> 
+            <option selected>Please pick a letter.</option>
+            {{#each this}}
+            <option class="dropdown-item" value={{this}}>
+                {{this}}
+            </option>
+            {{/each}}
+        </select>  
+    </script>
+    <script id="lettersTemplate2" type="text/x-handlebars-template">
+        <select class="form-control" id="name2"> 
+            <option selected>Please pick a letter.</option>
+            {{#each this}}
+            <option class="dropdown-item" value={{this}}>
+                {{this}}
+            </option>
+            {{/each}}
+        </select>  
+    </script>
+    <script id="lettersTemplate3" type="text/x-handlebars-template">
+        <select class="form-control" id="name3"> 
             <option selected>Please pick a letter.</option>
             {{#each this}}
             <option class="dropdown-item" value={{this}}>

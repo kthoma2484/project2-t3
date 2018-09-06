@@ -47,8 +47,12 @@ ul {
 }
 
 .instructions {
-  width: 900px;
+  width: 1000px;
+  overflow: hidden;
+}
 
+.instructions:hover {
+  overflow-y: scroll;
 }
 
 h1,
@@ -86,7 +90,6 @@ p {
 
 form {
   justify-content: center;
-  overflow: auto;
 }
 
 .form-row {
@@ -128,7 +131,11 @@ form {
 }
 
 #name1,
-#origin-name1 {
+#name2,
+#name3,
+#origin-name1,
+#origin-name2,
+#origin-name3 {
   display: flex;
   width: 300px;
 }
@@ -726,7 +733,6 @@ form {
   .container {
     width: 800px;
     height: 900px;
-    overflow: hidden;
   }
   
   .flex-column {
@@ -746,7 +752,7 @@ form {
   .col-sm-12,
   .form-group,
   .row {
-    width: 750px;
+    width: 600px;
   }
 }
  
