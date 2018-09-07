@@ -1,6 +1,6 @@
 $(function () {
 
-// (Kim) show and hide divs based on user selections
+    // (Kim) show and hide divs based on user selections
     var letters = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ").split("");
     //let data = {letter: [letters]};
 
@@ -388,51 +388,45 @@ $(function () {
         //     $(".origin-first-letter").append("<p> Enter the letters you wish the first name, the middle name, and the second middle name to begin with: <p>");
         // }
 
-      $("#opt2-btn").on('click', function () {
-        let opt2NumNames = $('#numNames').val();
-        let opt2FirstName = $('#origin-first-name').val();
-        let opt2LastName = $('#origin-last-name').val();
-        let opt2Gender = $('#inputGroupSelect03').val();
-        let opt2Sex = "";
-        if (opt2Gender === "1") opt2Sex = "f"
-        if (opt2Gender === "2") opt2Sex = "m"
-        let queryURL = `https://www.behindthename.com/api/lookup.json?name=${opt2FirstName}&key=cr909584168`;
-        $.get(queryURL).then(function (nameData) { //first query (getting origin info)
-          console.log(nameData); //info back about name    
-          let nameOrigin = nameData[0].usages[0].usage_code; //this gets the code of origin, ex sco for scottish
-          console.log("nameOrigin:", nameOrigin);
-          let country = nameData[0].usages[0].usage_full;
-          let queryURL2 = `https://www.behindthename.com/api/random.json?usage=${nameOrigin}&gender=${opt2Sex}&number=6&key=cr909584168`; //gets 6 names of same origin
-          $.get(queryURL2).then(function (relatedNames) { //new query using last names origin
-            console.log(relatedNames); //relatedNames is an array of 6 names;
-            // $(".display-origin-data").removeClass("hidden")
-            console.log(`${opt2FirstName} is a ${country} name`)
-            console.log(relatedNames.names[0]);
-            console.log("typeofvariable", typeof opt2NumNames)
-            console.log(opt2LastName);
-            if (opt2NumNames === "1") {
-              alert(`Welcome baby ${relatedNames.names[0]} ${opt2LastName} `); //OPT2 RESULT
-            }
-            if (opt2NumNames === "2") {
-              alert(`Welcome baby ${relatedNames.names[0]} ${relatedNames.names[1]} ${opt2LastName} `); //OPT2 RESULT
-            }
-            if (opt2NumNames === "3") {
-              alert(`Welcome baby ${relatedNames.names[0]} ${relatedNames.names[1]} ${relatedNames.names[2]} ${opt2LastName} `); //OPT2 RESULT
-            }
-          });
+
+        $("#opt2-btn").on('click', function () {
+            displayResult();
+            let opt2NumNames = $('#numNames').val();
+            let opt2FirstName = $('#origin-first-name').val();
+            let opt2LastName = $('#origin-last-name').val();
+            let opt2Gender = $('#inputGroupSelect03').val();
+            let opt2Sex = "";
+            if (opt2Gender === "1") opt2Sex = "f"
+            if (opt2Gender === "2") opt2Sex = "m"
+            let queryURL = `https://www.behindthename.com/api/lookup.json?name=${opt2FirstName}&key=cr909584168`;
+            $.get(queryURL).then(function (nameData) { //first query (getting origin info)
+                console.log(nameData); //info back about name    
+                let nameOrigin = nameData[0].usages[0].usage_code; //this gets the code of origin, ex sco for scottish
+                console.log("nameOrigin:", nameOrigin);
+                let country = nameData[0].usages[0].usage_full;
+                let queryURL2 = `https://www.behindthename.com/api/random.json?usage=${nameOrigin}&gender=${opt2Sex}&number=6&key=cr909584168`; //gets 6 names of same origin
+                $.get(queryURL2).then(function (relatedNames) { //new query using last names origin
+                    console.log(relatedNames); //relatedNames is an array of 6 names;
+                    // $(".display-origin-data").removeClass("hidden")
+                    console.log(`${opt2FirstName} is a ${country} name`)
+                    console.log(relatedNames.names[0]);
+                    console.log("typeofvariable", typeof opt2NumNames)
+                    console.log(opt2LastName);
+                    $("#result-div").removeClass("hidden");
+                    if (opt2NumNames === "1") {
+                        $("#result-div").append(`<h1>Your name is ${country}</h1><h1> Welcome baby ${relatedNames.names[0]} ${opt2LastName} </h1>`)
+                    }
+                    if (opt2NumNames === "2") {
+                        $("#result-div").append(`<h1>Your name is ${country}</h1><h1> Welcome baby ${relatedNames.names[0]} ${relatedNames.names[1]} ${opt2LastName} </h1>`); //OPT2 RESULT
+                    }
+                    if (opt2NumNames === "3") {
+                        $("#result-div").append(`<h1>Your name is ${country}</h1><h1> Welcome baby ${relatedNames.names[0]} ${relatedNames.names[1]} ${relatedNames.names[2]} ${opt2LastName} </h1>`); //OPT2 RESULT
+                    }
+                });
+            });
         });
-      });
 
-    });
-
-
-
-    // (Craig) SEARCH BY FILTER OPTION3
-    $("#opt3-btn").on("click", function () {
-        let gender = $("#inputGroupSelect05").val();
-        let year = $("#inputGroupSelect04 option:selected").val();
-        console.log("Gender:", gender);
-        console.log("Year:", year)
+        // });
 
         function displayResult() {
             console.log("displayResult function works");
@@ -441,23 +435,52 @@ $(function () {
 
         }
 
-        if (gender == 3) { //either
-            $.get(`/api/year/${year}`).then(function (data) {
-                console.log(data);
-                //alert("Data: " + data + "\nStatus: " + status);
-            });
-        } else if (gender == 2) { //boy
-            $.get(`/api/year/${year}/m`).then(function (data) {
-                console.log(data);
-                //alert("Data: " + data + "\nStatus: " + status);
-            });
-        } else if (gender == 1) { //girl
-            $.get(`/api/year/${year}/f`).then(function (data) {
-                console.log(data);
-                //alert("Data: " + data + "\nStatus: " + status);
-            });
-        }
-    });
+        //SEARCH BY FILTER OPTION3
+        $("#opt3-btn").on("click", function () {
 
+            $('#babies-img').hide();
+            let gender = $("#inputGroupSelect05").val();
+            let year = $("#inputGroupSelect04 option:selected").val();
+            console.log("Gender:", gender);
+            console.log("Year:", year)
+
+
+            displayResult();
+            if (gender == 3) { //either
+                $.get(`/api/year/${year}`).then(function (data) {
+                    renderGrid(data);
+                    //alert("Data: " + data + "\nStatus: " + status);
+                });
+            } else if (gender == 2) { //boy
+                $.get(`/api/year/${year}/m`).then(function (data) {
+                    renderGrid(data);
+                    //alert("Data: " + data + "\nStatus: " + status);
+                });
+            } else if (gender == 1) { //girl
+                $.get(`/api/year/${year}/f`).then(function (data) {
+                    renderGrid(data);
+                    //alert("Data: " + data + "\nStatus: " + status);
+                });
+            }
+        });
+
+        function renderGrid(data) {
+            let length = data.length;
+            let i = 20;
+            $('#result-div').removeClass("hidden");
+            $('#namesTable').removeClass("hidden");
+
+            if (length < i) i = length;
+            for (let j = 0; j < i; j++) {
+            $('#namesTable').append(`<tr>
+            <td>${data[j].name}</td>
+                <td>${data[j].gender}</td>
+                    <td>${data[j].year}</td>
+                        <td>${data[j].count}</td>`)
+            };
+        }
+
+
+    });
 
 });
