@@ -16,7 +16,7 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   width: 800px;
-  height: 260px;
+  height: 300px;
   padding-bottom: 0;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -73,7 +73,7 @@ ul {
   align-items: center;
   margin: 0;
   width: 1300px;
-  height: 1000px;
+  height: 1100px;
 }
 
 .container {
