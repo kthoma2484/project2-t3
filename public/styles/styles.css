@@ -16,7 +16,7 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   width: 800px;
-  height: 300px;
+  height: 250px;
   padding-bottom: 0;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -208,7 +208,7 @@ label {
 
   #logo {
     width: 600px;
-    height: 100px;
+    height: 150px;
     padding: 0;
     margin: 10px 0;
     background-size: 100%;
