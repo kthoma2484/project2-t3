@@ -376,17 +376,17 @@ $(function () {
         $("#origin-starts-with").removeClass("hidden");
         $("#origin-starts-with").html("");
 
-        // Appends appropriate text for first letter search
-        if ($(this).val() === "1") {
-            console.log("first letter text added");
-            $(".origin-first-letter").append("<p> Enter the letter you wish the first name to begin with: <p>");
-        } else if ($(this).val() === "2") {
-            console.log("first letter text added");
-            $(".origin-first-letter").append("<p> Enter the letters you wish the first name and the middle name to begin with: <p>");
-        } else if ($(this).val() === "3") {
-            console.log("first letter text added");
-            $(".origin-first-letter").append("<p> Enter the letters you wish the first name, the middle name, and the second middle name to begin with: <p>");
-        }
+        // // Appends appropriate text for first letter search
+        // if ($(this).val() === "1") {
+        //     console.log("first letter text added");
+        //     $(".origin-first-letter").append("<p> Enter the letter you wish the first name to begin with: <p>");
+        // } else if ($(this).val() === "2") {
+        //     console.log("first letter text added");
+        //     $(".origin-first-letter").append("<p> Enter the letters you wish the first name and the middle name to begin with: <p>");
+        // } else if ($(this).val() === "3") {
+        //     console.log("first letter text added");
+        //     $(".origin-first-letter").append("<p> Enter the letters you wish the first name, the middle name, and the second middle name to begin with: <p>");
+        // }
 
       $("#opt2-btn").on('click', function () {
         let opt2NumNames = $('#numNames').val();
