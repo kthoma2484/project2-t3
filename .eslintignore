@@ -3,3 +3,4 @@ node_modules
 seeds.sql
 schema.sql
 config.json
+main.js
