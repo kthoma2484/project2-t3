@@ -28,7 +28,13 @@
 
             <div class="row intro">
                 <p class="header1">Welcome to Da-Ta-Baby - the baby name finder!</p>
-                <p class="text1"> Just pick an option for how you would like to search for a baby name. Each option allows you to filter your search based on the type of search you select. The random name is a luck of the draw search. The search by origin will request a last name from you, search that last name, and find suggest first and/or middle names that have the same country origin. And finally, the search by common U.S. names will suggest names based on popular names recorded in U.S. records since 1880! We hope you enjoy our application selections! Get ready to find your baby's perfect name!</p>
+                <p class="text1"> Just pick an option for how you would like to search for a baby name. Each option
+                    allows you to filter your search based on the type of search you select. The random name is a luck
+                    of the draw search. The search by origin will request a last name from you, search that last name,
+                    and find suggest first and/or middle names that have the same country origin. And finally, the
+                    search by common U.S. names will suggest names based on popular names recorded in U.S. records
+                    since 1880! We hope you enjoy our application selections! Get ready to find your baby's perfect
+                    name!</p>
                 <p class="header1" style="text-decoration: underline;">Select one of the search items to begin!</p>
             </div>
 
@@ -121,15 +127,15 @@
                                     <br>
                                     <div class="form-group form-inline">
                                         <div>
-                                        <label for="origin-first-name">Enter first name to search origin:</label>
-                                        <input type="text" class="form-control" id="origin-first-name" placeholder="First Name Here">
+                                            <label for="origin-first-name">Enter first name to search origin:</label>
+                                            <input type="text" class="form-control" id="origin-first-name" placeholder="First Name Here">
                                         </div>
                                     </div>
                                     <br>
                                     <div class="form-group form-inline">
                                         <div>
-                                        <label for="origin-last-name">Enter last name to search origin:</label>
-                                        <input type="text" class="form-control" id="origin-last-name" placeholder="Last Name Here">
+                                            <label for="origin-last-name">Enter last name to search origin:</label>
+                                            <input type="text" class="form-control" id="origin-last-name" placeholder="Last Name Here">
                                         </div>
                                     </div>
                                     <br>
@@ -196,7 +202,8 @@
                                     <br>
 
                                     <ul>
-                                        <li>First, select the gender of the name you wish to search for. If gender is irrelevant, select 'either'.</li>
+                                        <li>First, select the gender of the name you wish to search for. If gender is
+                                            irrelevant, select 'either'.</li>
 
 
                                         <div class="input-group-prepend">
@@ -209,7 +216,8 @@
                                         </div>
                                         <br>
 
-                                        <li>Then, select the decade you want to search for name popularity during that time period.</li>
+                                        <li>Then, select the decade you want to search for name popularity during that
+                                            time period.</li>
 
                                         <select class="form-control decade" id="inputGroupSelect04">
                                             <option selected>Search by decade (from 1880)?</option>
@@ -280,7 +288,7 @@
 
 
     <!--Kim Script Start-->
-   
+
     <script id="lettersTemplate" type="text/x-handlebars-template">
         <select class="form-control" id="name1"> 
             <option selected>Please pick a letter.</option>
@@ -321,7 +329,8 @@
             {{/each}}
         </select>  
     </script>
-    <script id="originTemplate" type="text/x-handlebars-template">
+    <script id="commonNameTemplate" type="text/x-handlebars-template">
+
     </script>
 
 
