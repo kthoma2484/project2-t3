@@ -1,8 +1,3 @@
-DROP DATABASE IF EXISTS namesdb;
-CREATE DATABASE namesdb;
-
-USE namesdb;
-
 CREATE TABLE names
 (
 	id int NOT NULL AUTO_INCREMENT,

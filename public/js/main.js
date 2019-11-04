@@ -185,7 +185,7 @@ $(function () {
                 displayResult();
 
                 if (fullNameArray.length) {
-                    $("#result-div").append(`<h1> Your baby's random name is...</h1><p id="result-deco"> ${fullName} </p>`)
+                    $("#result-div").append(`<h1> Your baby's random name is...</h1><p id="result-deco"> ${fullName} </p>`);
                 } else {
                     $("#result-div").append(`<h1> Oh No! There were no names found for your search! Please try again.</h1>`)
                 }
